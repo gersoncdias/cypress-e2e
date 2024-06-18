@@ -1,0 +1,21 @@
+{
+  "url": {
+    "shipping": "checkout/#/shipping",
+    "shipping_rest": "checkout#/shipping",
+    "payment": "checkout/#/payment"
+  },
+  "modalInfo": {
+    "title": "Usamos seu e-mail de forma 100% segura para:"
+  },
+  "payment": {
+    "valeExchange": "Vale presente",
+    "bankSlip": "O Boleto bancário será exibido após a confirmação da compra e poderá ser impresso para pagamento em qualquer agência bancária, ou ter o número anotado para pagamento pelo telefone ou internet."
+  },
+  "modalSummary": {
+    "title": "Resumo do pedido",
+    "txt_subtotal": "Subtotal",
+    "txt_shipping": "Entrega",
+    "txt_total": "Total",
+    "txt_submit": "Finalizar compra"
+  }
+}

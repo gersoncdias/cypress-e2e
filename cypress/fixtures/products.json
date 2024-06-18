@@ -1,0 +1,37 @@
+{
+  "add_product": {
+    "add_mini_cart": "Adicionar ao carrinho"
+  },
+  "product_unit": [
+    {
+      "seller": "1",
+      "quantity": 1,
+      "id": "6"
+    }
+  ],
+  "product_two": [
+    {
+      "seller": "1",
+      "quantity": 2,
+      "id": "6"
+    }
+  ],
+  "product_two_different": [
+    {
+      "seller": "1",
+      "quantity": 1,
+      "id": "6"
+    },
+    {
+      "seller": "1",
+      "quantity": 1,
+      "id": "22105"
+    }
+  ],
+  "products": {
+    "url": {
+      "product_unit": "-ducha-ideale-plus-4-temperaturas-branca-220v-6800w-zagonel-89443375/p",
+      "plp": "climatizacao-e-ventilacao/"
+    }
+  }
+}

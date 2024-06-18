@@ -1,0 +1,28 @@
+{
+  "api": {
+    "cookie_name": "VtexIdclientAutCookie",
+    "orderForm": "f6546426ef15449d8663b60c6f356bbb"
+  },
+  "sellers": {
+    "cookie_name": {
+      "name": "sellerName"
+    },
+    "benfica": {
+      "name": "Loja Benfica",
+      "id": "lojaobramax1002"
+    },
+    "mooca": {
+      "name": "Loja Mooca",
+      "id": "lojaobramax1000"
+    }
+  },
+  "allowed": {
+    "allowed_cookie": "user_allowed_save_cookie"
+  },
+  "personification": {
+    "cookie_person_name": "vtex-impersonated-customer-email"
+  },
+  "checkout": {
+    "order_forme": "checkout.vtex.com"
+  }
+}

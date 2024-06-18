@@ -1,0 +1,17 @@
+{
+  "breadcrumb": {
+    "primeiro_link": "Climatização e Ventilação"
+  },
+  "filter": {
+    "title": "Categoria",
+    "category": "Ar Condicionado"
+  },
+  "ordering": {
+    "title": "Ordenar Por",
+    "order": "De A a Z"
+  },
+  "show_more": "Mostrar mais",
+  "carrosel": {
+    "product_high": "PRODUTOS EM ALTA 🔥"
+  }
+}

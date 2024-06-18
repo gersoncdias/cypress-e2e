@@ -1,0 +1,13 @@
+{
+  "cart": {
+    "mini_cart": {
+      "title": "Meu carrinho",
+      "total": "Total",
+      "conclude": "Concluir compra",
+      "weight": "Peso total da compra: ",
+      "empty": "Seu carrinho está vazio",
+      "text_description": "Para continuar comprando, navegue pelas categorias do site, ou procure um produto.",
+      "text_btn": "Escolher produtos"
+    }
+  }
+}

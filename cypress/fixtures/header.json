@@ -1,0 +1,25 @@
+{
+  "header": {
+    "text_my_orders": "Meus pedidos",
+    "link_my_orders": "/account#/my-orders",
+    "max_for_less": {
+      "url": "139?map=productClusterIds",
+      "txt_search_result": "🤑  Max Por Menos"
+    },
+    "budget": {
+      "txt_budget": "Orçamento",
+      "txt_click": "Clique aqui"
+    },
+    "modalBurger": {
+      "txt_cart": "Novo Carrinho",
+      "txt_bulk_order": "Pedido em Massa",
+      "txt_registration": "Cadastro de Usuário"
+    },
+    "headerQta": {
+      "text_login": "Entrar como cliente"
+    },
+    "header_mobile": {
+      "departments": "Banheiros"
+    }
+  }
+}

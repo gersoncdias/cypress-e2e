@@ -1,0 +1,59 @@
+{
+  "regionalization": {
+    "modify": "Alterar",
+    "modal_regionalization": {
+      "geo_my_location": "Minha localização",
+      "cep_input_store": "Ou selecione uma loja",
+      "title": "Onde você quer receber sua compra?",
+      "success_message": "Você receberá neste endereço!",
+      "subTitle": "Sua localização nos ajuda a exibir produtos e serviços exclusivos para sua região :)"
+    },
+    "toast_regionalization": {
+      "without_delivery": "Ainda não entregamos na sua região, mas você pode navegar pelo site e comprar na loja mais próxima."
+    },
+    "popup_regionalization": {
+      "title": "Preços e estoques",
+      "sub_title": "exclusivos da Loja Mooca.",
+      "text": "Clique em 'Alterar' e insira seu CEP para uma experiência personalizada."
+    },
+    "modal_calculate_shipping": {
+      "title": "Calcule o frete",
+      "cep_valid": "24425005",
+      "cep_invalid": "abc",
+      "txt_warning": "Não existe um frete disponível para o CEP informado.",
+      "txt_error": "CEP inválido.",
+      "txt_sucess": "Veja as opções para receber ou retirar no seu CEP:"
+    },
+    "sellers": {
+      "title": "Calcule o frete",
+      "modify": "Alterar",
+      "cep_rj": "24425005",
+      "cep_sp": "03169-010",
+      "cep_mooca": "03108010",
+      "offer": "Ofertas para:",
+      "cep_benfica": "20930040",
+      "mooca": "lojaobramax1000",
+      "benfica": "lojaobramax1002",
+      "sellerName_mooca": "SP - Mooca",
+      "cep_without_action": "78480-000",
+      "sellerName_benfica": "RJ - Benfica",
+      "sellerName_mooca_qta": "Loja Mooca",
+      "sellerName_benfica_qta": "Loja Benfica",
+      "text_without_region": "Informe seu CEP"
+    },
+    "order_form": {
+      "benfica": {
+        "country": "BRA",
+        "postalCode": "20930-040"
+      },
+      "mooca": {
+        "country": "BRA",
+        "postalCode": "03108-010"
+      },
+      "without": {
+        "country": "BRA",
+        "postalCode": "78480-000"
+      }
+    }
+  }
+}

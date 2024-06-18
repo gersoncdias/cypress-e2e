@@ -1,0 +1,47 @@
+{
+  "name": "obramax",
+  "version": "1.0.0",
+  "description": "Projeto de automação de testes e2e ObraMax ",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint cypress/e2e/*.cy.js",
+    "lint:fix": "eslint cypress/**/**.js --fix",
+    "format": "prettier --write \"**/*.js\"",
+    "test:chrome": "npx cypress run --browser=chrome --spec 'cypress/e2e/desk/ecom/**' --reporter mocha-allure-reporter",
+    "report:allure": "allure generate allure-results --clean -o allure-report && allure open  allure-report",
+    "allure:run": "npm run test:chrome && npm run report:allure",
+    "clean_reports": "rm -rf allure-results",
+    "clean_screenshots": "rm -rf cypress/screenshots",
+    "desk_ecom_1920_01": "npx cypress run --browser=chrome --config viewportWidth=1920,viewportHeight=1080 --spec 'cypress/e2e/desk/ecom/home.cy.js,cypress/e2e/desk/ecom/header.cy.js,cypress/e2e/desk/ecom/footer.cy.js,cypress/e2e/desk/ecom/search.cy.js,cypress/e2e/desk/ecom/my_account.cy.js'",
+    "desk_ecom_1920_02": "npx cypress run --browser=chrome --config viewportWidth=1920,viewportHeight=1080 --spec 'cy.js,cypress/e2e/desk/ecom/login.cy.js,cypress/e2e/desk/ecom/plp.cy.js,cypress/e2e/desk/ecom/pdp.cy.js,cypress/e2e/desk/ecom/cart.cy.js,cypress/e2e/desk/ecom/min_cart.cy.js,cypress/e2e/desk/ecom/checkout.cy.js'",
+    "run_all_tests_desk_1920": "npm cypress run --browser=chrome --config viewportWidth=1920,viewportHeight=1080 --serial desk_ecom_1920_01 desk_ecom_1920_02",
+    "desk_ecom_1366_01": "npx cypress run --browser=chrome --config viewportWidth=1366,viewportHeight=740 --spec 'cypress/e2e/desk/ecom/home.cy.js,cypress/e2e/desk/ecom/header.cy.js,cypress/e2e/desk/ecom/footer.cy.js,cypress/e2e/desk/ecom/login.cy.js,cypress/e2e/desk/ecom/plp.cy.js'",
+    "desk_ecom_1366_02": "npx cypress run --browser=chrome --config viewportWidth=1366,viewportHeight=740 --spec 'cypress/e2e/desk/ecom/pdp.cy.js,cypress/e2e/desk/ecom/cart.cy.js,cypress/e2e/desk/ecom/min_cart.cy.js,cypress/e2e/desk/ecom/checkout.cy.js,cypress/e2e/desk/ecom/my_account.cy.js,cypress/e2e/desk/ecom/search.cy.js'",
+    "run_all_tests_desk_1366": "npm cypress run --browser=chrome --config viewportWidth=1366,viewportHeight=740 --serial desk_ecom_1366_01 desk_ecom_1366_02",
+    "cypress:smoke": "npx cypress run --spec \"cypress/e2e/desk/ecom/*\" --env grepTags=smoke",
+    "desk_qta_1366": "npx cypress run --browser=chrome --config viewportWidth=1366,viewportHeight=1080 --spec 'cypress/e2e/desk/qta/*'",
+    "desk_ecom_1366": "npx cypress run --browser=chrome --config viewportWidth=1366,viewportHeight=1080 --spec 'cypress/e2e/desk/ecom/*'",
+    "desk_qta_1920": "npx cypress run --browser=chrome --config viewportWidth=1920,viewportHeight=1080 --spec 'cypress/e2e/desk/qta/*'",
+    "mobile_android_qta": "npx cypress run --browser=chrome --config viewportWidth=360,viewportHeight=740 --spec 'cypress/e2e/desk/qta/*'",
+    "mobile_android_ecom": "npx cypress run --browser=chrome --config viewportWidth=360,viewportHeight=740 --spec 'cypress/e2e/desk/ecom/*'",
+    "mobile_ios_qta": "npx cypress run --browser=chrome --config viewportWidth=360,viewportHeight=740 --spec 'cypress/e2e/desk/qta/*'",
+    "mobile_ios_ecom": "npx cypress run --browser=chrome --config viewportWidth=360,viewportHeight=740 --spec 'cypress/e2e/desk/ecom/*'"
+  },
+  "keywords": [
+    "test",
+    "cypress",
+    "quality"
+  ],
+  "author": "Quality Digital",
+  "license": "ISC",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.40.2",
+    "allure-commandline": "^2.29.0",
+    "cypress-plugin-xhr-toggle": "^1.2.1",
+    "mocha-allure-reporter": "^1.4.0"
+  },
+  "dependencies": {
+    "cypress": "^13.6.4",
+    "cypress-plugin-api": "^2.11.1"
+  }
+}

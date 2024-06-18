@@ -1,0 +1,89 @@
+{
+  "footer": {
+    "menu_institutional": {
+      "title": "Institucional",
+      "txt_quem_somos": "Quem Somos",
+      "txt_fornecedores": "Fornecedores",
+      "txt_trabalhe_conosco": "Trabalhe Conosco",
+      "txt_assessoria": "Assessoria de Imprensa"
+    },
+    "menu_policy": {
+      "title": "Políticas",
+      "txt_termos": "Termos e Condições",
+      "txt_cookies": "Política de Cookies",
+      "txt_pagamento": "Política de Pagamento",
+      "txt_troca": "Política de Troca e Devolução",
+      "txt_entrega": "Política de Entrega e Retira",
+      "txt_privacidade": "Política de Segurança e Privacidade",
+      "txt_igualdade": "Relatório de Transparência e Igualdade Salarial"
+    },
+    "menu_title": {
+      "title": "Nossas Lojas",
+      "txt_redes": "Redes Sociais",
+      "txt_central": "Central do Cliente",
+      "txt_pagameto": "Formas de Pagamento",
+      "txt_certificacao": "Reputação e Certificação"
+    },
+    "menu_stores_mooca": {
+      "title": "Unidade Mooca - SP",
+      "txt_stores": "Mooca - São Paulo/SP",
+      "txt_address": "Avenida do Estado, 6.313",
+      "txt_sunday_hours": "Domingos: das 9h às 17",
+      "txt_saturday_hours": "Sábados das 07h às 21h",
+      "txt_working_hours": "Segunda a Sexta: das 07h às 22h"
+    },
+    "menu_stores_praia": {
+      "title": "Unidade Praia Grande - SP",
+      "txt_sunday_hours": "Domingos: das 9h às 17",
+      "txt_stores": "Jd. Glória - Praia Grande/SP",
+      "txt_address": "Av. Ministro Marcos Freire, 1.500",
+      "txt_working_hours": "Segunda a Sábado: das 07h às 21h"
+    },
+    "menu_stores_benfica": {
+      "title": "Unidade Benfica - RJ",
+      "txt_address": "Av. Brasil, 3666",
+      "txt_stores": "Benfica - Rio de Janeiro/RJ",
+      "txt_sunday_hours": "Domingos: das 9h às 17",
+      "txt_working_hours": "Segunda a Sábado: das 07h às 21h"
+    },
+    "menu_stores_piracicaba": {
+      "title": "Unidade Piracicaba - SP",
+      "txt_stores": "Santa Rita - Piracicaba/SP",
+      "txt_sunday_hours": "Domingos: das 9h às 17",
+      "txt_address": "Av Irmã Maria Felicíssima, 201",
+      "txt_working_hours": "Segunda a Sábado: das 07h às 21h"
+    },
+    "menu_tele_venda": {
+      "title": "Televendas",
+      "txt_contact": "(11) 3003-3400 *Opção 2",
+      "txt_saturday_hours": "Sábados: das 08h às 13h",
+      "txt_sunday_hours": "Domingos: não há expediente",
+      "txt_budget": "Ou clique aqui e faça seu orçamento",
+      "txt_working_hours": "Segunda a Sexta: das 08h às 18h"
+    },
+    "menu_central_cliente": {
+      "title": "Central do cliente",
+      "txt_contact": "(11) 3003-3400 *Opção 3",
+      "txt_working_hours": "Segunda a Sexta: das 08h às 18h",
+      "txt_saturday_hours": "Sábados: das 08h às 16h",
+      "txt_sunday_hours": "Domingos: não há expediente",
+      "txt_budget": "Ou clique aqui e entre em contato"
+    },
+    "menu_faq": {
+      "txt_help": "FAQ - Central de Ajuda",
+      "txt_questions": "Confira as perguntas mais frequentes"
+    },
+    "menu_conteudo": {
+      "title": "Conteúdo Obramax",
+      "txt_blog": "Blog da Obramax",
+      "txt_obra": "Obra é Compromisso ",
+      "txt_academia": "Academia de Profissionais"
+    },
+    "copyright": {
+      "title": "TODOS OS DIREITOS RESERVADOS.",
+      "txt_informative_on": "Todo o conteúdo do site, todas as fotos, imagens, logotipos, marcas, dizeres, som, vídeo, software, conjunto imagem, layout, trade dress, aqui veiculados são de propriedade exclusiva da BMB Material de Construcao S.A.. É vedada qualquer reprodução, total ou parcial, de",
+      "txt_informative_middle": "qualquer elemento de identidade, sem expressa autorização. A violação de qualquer direito mencionado implicará na responsabilização cível e criminal nos termos da Lei.",
+      "txt_informativelast": " BMB Material de Construcao S.A. - CNPJ: 23.476.033/0001-08 – Avenida do Estado, 6.313, Bairro Mooca, São Paulo, SP, CEP 03105-005, Brasil."
+    }
+  }
+}

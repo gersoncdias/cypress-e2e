@@ -1,0 +1,16 @@
+{
+  "home_page": {
+    "department_shelf": {
+      "title": "Compre por departamento"
+    },
+    "newsletter": {
+      "register": "Cadastrar",
+      "text_thanks": "Obrigado!",
+      "text_input_name": "Digite seu nome",
+      "text_input_email": "Digite seu e-mail",
+      "text_description": "Receba novidades, ofertas exclusivas e produtos incríveis da Obramax em seu e-mail.",
+      "email": "teste@test.com",
+      "name": "Teste Qa"
+    }
+  }
+}

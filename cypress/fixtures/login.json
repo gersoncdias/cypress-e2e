@@ -1,0 +1,26 @@
+{
+  "login": {
+    "login_qta": {
+      "title_email": "Olá, entre no seu admin",
+      "title_password": "Insira sua senha"
+    },
+    "logout": {
+      "title": "Compre por departamento"
+    },
+    "select_option_login": "Selecione uma das opções para fazer login",
+    "input_type": "Entrar com e-mail ou CPF/CNPJ e senha"
+  },
+  "interface": {
+    "exit": "Sair",
+    "my_account": "Minha conta",
+    "greeting": "Olá, ",
+    "user_type_qta": "tendente: ",
+    "confirm_exit": "Deseja mesmo sair?",
+    "without_logged": "Entre ou Cadastre-se",
+    "get_code_email": "Receber código por e-mail",
+    "input_type": "Entrar com e-mail ou CPF/CNPJ e senha",
+    "without_logged_qta_title": "Personifique seu cliente",
+    "select_option_login": "Selecione uma das opções para fazer login",
+    "without_logged_qta_text": "Antes de prosseguir com o checkout, você deve entrar na plataforma como cliente."
+  }
+}

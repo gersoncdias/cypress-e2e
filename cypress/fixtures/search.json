@@ -1,0 +1,12 @@
+{
+  "search": {
+    "input_search": {
+      "placeholder": "Digite sua busca aqui",
+      "most_searched": "Termos mais buscados"
+    },
+    "input_text": {
+      "text_suggestion": "massa corrida",
+      "text_not_found": "Sem Sugestões"
+    }
+  }
+}

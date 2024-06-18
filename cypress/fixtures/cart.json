@@ -1,0 +1,29 @@
+{
+  "cart": {
+    "url": "checkout#/cart",
+    "url_cat": "checkout/#/cart",
+    "url_email": "checkout#/email"
+  },
+  "delivery": {
+    "title": "Entrega",
+    "receive": "Receber",
+    "withdrawn": "Retirar"
+  },
+  "carty_empty": {
+    "title": "Seu carrinho está vazio."
+  },
+  "widget": {
+    "title": "APROVEITE E LEVE TAMBÉM"
+  },
+  "remove": {
+    "all": "remover itens do carrinho",
+    "title": "Remover itens",
+    "texto": "Deseja remover 2 itens do carrinho?",
+    "btn_texto": "Remover"
+  },
+  "close_order": {
+    "btn_texto": "Fechar pedido"
+  },
+  "placeholder": "seu@email.com",
+  "modal_info": "Identificamos seus dados a partir de compras anteriores. Facilitaremos sua compra preenchendo alguns dados de forma segura."
+}

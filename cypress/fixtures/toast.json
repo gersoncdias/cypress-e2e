@@ -1,0 +1,8 @@
+{
+  "toast": {
+    "wishlist": {
+      "logged": "Produto adicionado à sua lista",
+      "without_logged": "Você precisa entrar antes de adicionar um produto à sua lista"
+    }
+  }
+}

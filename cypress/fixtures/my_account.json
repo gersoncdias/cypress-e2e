@@ -1,0 +1,43 @@
+{
+  "my_account": {
+    "menu": {
+      "personal_data": "Dados pessoais",
+      "address": "Endereços",
+      "order": "Pedidos",
+      "cards": "Cartões",
+      "my_credits": "Meus Créditos",
+      "wishlist": "Lista de Desejos",
+      "authentication": "Autenticação",
+      "order_history": "Histórico de Pedidos",
+      "my_works": "Minhas Obras",
+      "my_balance": "Saldo CredObra",
+      "exit": "Sair",
+      "add_adress": "Adicionar endereço",
+      "without_addres": "Você não tem nenhum endereço cadastrado!",
+      "addres": "Travessa Carvalho 171Caramujo",
+      "without_order": "Você ainda não possui pedidos!",
+      "without_cards": "Você não tem nenhum método de pagamento registrado.",
+      "without_credit": "Você não tem nenhum método de pagamento registrado.",
+      "claim_exit": "Deseja mesmo sair?"
+    },
+    "labels": {
+      "name": "Nome",
+      "last_name": "Sobrenome",
+      "email": "Email",
+      "gender": "Gênero",
+      "cpf": "CPF",
+      "birth_date": "Data de nascimento",
+      "phone_number": "Telefone",
+      "btn_edit": "Editar"
+    },
+    "url": {
+      "account": "account#/",
+      "profile": "account#/profile",
+      "my_account": "account#/account",
+      "pdp": "-ducha-ideale-plus-4-temperaturas-branca-220v-6800w-zagonel-89443375/p",
+      "departaments": {
+        "ferragens": "nossas-lojas"
+      }
+    }
+  }
+}

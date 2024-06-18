@@ -1,0 +1,200 @@
+{
+  "footer": {
+    "menu_institutional": {
+      "title": "Institucional",
+      "txt_quem_somos": "Quem Somos",
+      "txt_fornecedores": "Fornecedores",
+      "txt_trabalhe_conosco": "Trabalhe Conosco",
+      "txt_assessoria": "Assessoria de Imprensa"
+    },
+    "menu_policy": {
+      "title": "Políticas",
+      "txt_termos": "Termos e Condições",
+      "txt_cookies": "Política de Cookies",
+      "txt_pagamento": "Política de Pagamento",
+      "txt_troca": "Política de Troca e Devolução",
+      "txt_entrega": "Política de Entrega e Retira",
+      "txt_privacidade": "Política de Segurança e Privacidade",
+      "txt_igualdade": "Relatório de Transparência e Igualdade Salarial"
+    },
+    "menu_title": {
+      "title": "Nossas Lojas",
+      "txt_redes": "Redes Sociais",
+      "txt_central": "Central do Cliente",
+      "txt_pagameto": "Formas de Pagamento",
+      "txt_certificacao": "Reputação e Certificação"
+    },
+    "menu_stores_mooca": {
+      "title": "Unidade Mooca - SP",
+      "txt_stores": "Mooca - São Paulo/SP",
+      "txt_address": "Avenida do Estado, 6.313",
+      "txt_sunday_hours": "Domingos: das 9h às 17",
+      "txt_saturday_hours": "Sábados das 07h às 21h",
+      "txt_working_hours": "Segunda a Sexta: das 07h às 22h"
+    },
+    "menu_stores_praia": {
+      "title": "Unidade Praia Grande - SP",
+      "txt_sunday_hours": "Domingos: das 9h às 17",
+      "txt_stores": "Jd. Glória - Praia Grande/SP",
+      "txt_address": "Av. Ministro Marcos Freire, 1.500",
+      "txt_working_hours": "Segunda a Sábado: das 07h às 21h"
+    },
+    "menu_stores_benfica": {
+      "title": "Unidade Benfica - RJ",
+      "txt_address": "Av. Brasil, 3666",
+      "txt_stores": "Benfica - Rio de Janeiro/RJ",
+      "txt_sunday_hours": "Domingos: das 9h às 17",
+      "txt_working_hours": "Segunda a Sábado: das 07h às 21h"
+    },
+    "menu_stores_piracicaba": {
+      "title": "Unidade Piracicaba - SP",
+      "txt_stores": "Santa Rita - Piracicaba/SP",
+      "txt_sunday_hours": "Domingos: das 9h às 17",
+      "txt_address": "Av Irmã Maria Felicíssima, 201",
+      "txt_working_hours": "Segunda a Sábado: das 07h às 21h"
+    },
+    "menu_tele_venda": {
+      "title": "Televendas",
+      "txt_contact": "(11) 3003-3400 *Opção 2",
+      "txt_saturday_hours": "Sábados: das 08h às 13h",
+      "txt_sunday_hours": "Domingos: não há expediente",
+      "txt_budget": "Ou clique aqui e faça seu orçamento",
+      "txt_working_hours": "Segunda a Sexta: das 08h às 18h"
+    },
+    "menu_central_cliente": {
+      "title": "Central do cliente",
+      "txt_contact": "(11) 3003-3400 *Opção 3",
+      "txt_working_hours": "Segunda a Sexta: das 08h às 18h",
+      "txt_saturday_hours": "Sábados: das 08h às 16h",
+      "txt_sunday_hours": "Domingos: não há expediente",
+      "txt_budget": "Ou clique aqui e entre em contato"
+    },
+    "menu_faq": {
+      "txt_help": "FAQ - Central de Ajuda",
+      "txt_questions": "Confira as perguntas mais frequentes"
+    },
+    "menu_conteudo": {
+      "title": "Conteúdo Obramax",
+      "txt_blog": "Blog da Obramax",
+      "txt_obra": "Obra é Compromisso ",
+      "txt_academia": "Academia de Profissionais"
+    },
+    "copyright": {
+      "title": "TODOS OS DIREITOS RESERVADOS.",
+      "txt_informative_on": "Todo o conteúdo do site, todas as fotos, imagens, logotipos, marcas, dizeres, som, vídeo, software, conjunto imagem, layout, trade dress, aqui veiculados são de propriedade exclusiva da BMB Material de Construcao S.A.. É vedada qualquer reprodução, total ou parcial, de",
+      "txt_informative_middle": "qualquer elemento de identidade, sem expressa autorização. A violação de qualquer direito mencionado implicará na responsabilização cível e criminal nos termos da Lei.",
+      "txt_informativelast": " BMB Material de Construcao S.A. - CNPJ: 23.476.033/0001-08 – Avenida do Estado, 6.313, Bairro Mooca, São Paulo, SP, CEP 03105-005, Brasil."
+    }
+  },
+  "home_page": {
+    "department_shelf": {
+      "title": "Compre por departamento"
+    },
+    "newsletter": {
+      "register": "Cadastrar",
+      "text_thanks": "Obrigado!",
+      "text_input_name": "Digite seu nome",
+      "text_input_email": "Digite seu e-mail",
+      "text_description": "Receba novidades, ofertas exclusivas e produtos incríveis da Obramax em seu e-mail.",
+      "email": "teste@test.com",
+      "name": "Teste Qa"
+    }
+  },
+  "cart": {
+    "mini_cart": {
+      "title": "Meu carrinho",
+      "total": "Total",
+      "conclude": "Concluir compra",
+      "weight": "Peso total da compra: ",
+      "empty": "Seu carrinho está vazio",
+      "text_description": "Para continuar comprando, navegue pelas categorias do site, ou procure um produto.",
+      "text_btn": "Escolher produtos"
+    }
+  },
+  "breadcrumb": {
+    "modal_location": {
+      "title": "Materiais de Construção"
+    }
+  },
+  "search": {
+    "input_search": {
+      "placeholder": "Digite sua busca aqui",
+      "most_searched": "Termos mais buscados"
+    },
+    "input_text": {
+      "text_suggestion": "massa corrida"
+    }
+  },
+  "toast": {
+    "wishlist": {
+      "logged": "Produto adicionado à sua lista",
+      "without_logged": "Você precisa entrar antes de adicionar um produto à sua lista"
+    }
+  },
+
+  "my_account": {
+    "menu": {
+      "personal_data": "Dados pessoais",
+      "address": "Endereços",
+      "order": "Pedidos",
+      "cards": "Cartões",
+      "my_credits": "Meus Créditos",
+      "wishlist": "Lista de Desejos",
+      "authentication": "Autenticação",
+      "order_history": "Histórico de Pedidos",
+      "my_works": "Minhas Obras",
+      "exit": "Sair",
+      "add_adress": "Adicionar endereço",
+      "without_addres": "Você não tem nenhum endereço cadastrado!",
+      "addres": "Travessa Carvalho 171Caramujo",
+      "without_order": "Você ainda não possui pedidos!",
+      "claim_exit": "Deseja mesmo sair?"
+    },
+    "labels": {
+      "name": "Nome",
+      "last_name": "Sobrenome",
+      "email": "Email",
+      "gender": "Gênero",
+      "cpf": "CPF",
+      "birth_date": "Data de nascimento",
+      "phone_number": "Telefone",
+      "btn_edit": "Editar"
+    },
+    "url": {
+      "profile": "account#/profile",
+      "my_account": "account#/account",
+      "pdp": "-ducha-ideale-plus-4-temperaturas-branca-220v-6800w-zagonel-89443375/p",
+      "departaments": {
+        "ferragens": "nossas-lojas"
+      }
+    }
+  },
+  "pdp": {
+    "descript": {
+      "title": "Ducha Ideale Plus 4 Temperaturas Branca 220V 6800W Zagonel"
+    }
+  },
+  "add_product": {
+    "add_mini_cart": "Adicionar ao carrinho"
+  },
+  "header": {
+    "text_my_orders": "Meus pedidos",
+    "link_my_orders": "/account#/my-orders",
+    "max_for_less": {
+      "url": "139?map=productClusterIds",
+      "txt_search_result": "🤑  Max Por Menos"
+    },
+    "budget": {
+      "txt_budget": "Orçamento",
+      "txt_click": "Clique aqui"
+    },
+    "modalBurger": {
+      "txt_cart": "Novo Carrinho",
+      "txt_bulk_order": "Pedido em Massa",
+      "txt_registration": "Cadastro de Usuário"
+    },
+    "headerQta": {
+      "text_login": "Entrar como cliente"
+    }
+  }
+}
