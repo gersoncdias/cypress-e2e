@@ -10,7 +10,7 @@ describe('Regionalizado Benfica Personificado', () => {
     cy.personifiedQta(
       Cypress.config().url_loja + validation_data_my_account.my_account.url.pdp,
       env.user_qta.user_tlv.user_name,
-      env.user_qta.user_tlv.password,
+      env.user_qta.user_tlv.password
     )
     cy.modalSelectSeller()
     cy.modalDropdowSeller(validation_data_reg.regionalization.sellers.sellerName_benfica)
@@ -26,7 +26,7 @@ describe('Regionalizado Benfica Personificado', () => {
     cy.validBreadcrumb(
       validation_data_pdp.breadcrumb.primeiro_link,
       validation_data_pdp.breadcrumb.segundo_link,
-      validation_data_pdp.breadcrumb.terceiro_link,
+      validation_data_pdp.breadcrumb.terceiro_link
     )
   })
   it('04 PDP - Validate button increase product quantity', () => {
@@ -66,7 +66,7 @@ describe('Regionalizado Mooca Personificado', () => {
     cy.personifiedQta(
       Cypress.config().url_loja + validation_data_my_account.my_account.url.pdp,
       env.user_qta.user_tlv.user_name,
-      env.user_qta.user_tlv.password,
+      env.user_qta.user_tlv.password
     )
     cy.modalSelectSeller()
     cy.modalDropdowSeller(validation_data_reg.regionalization.sellers.sellerName_mooca)
@@ -82,7 +82,7 @@ describe('Regionalizado Mooca Personificado', () => {
     cy.validBreadcrumb(
       validation_data_pdp.breadcrumb.primeiro_link,
       validation_data_pdp.breadcrumb.segundo_link,
-      validation_data_pdp.breadcrumb.terceiro_link,
+      validation_data_pdp.breadcrumb.terceiro_link
     )
   })
   it('04 PDP - Validate button increase product quantity', () => {
@@ -121,7 +121,7 @@ describe('Regionalizado Mooca Não Personificado', () => {
     cy.nopersonifiedQta(
       Cypress.config().url_loja + validation_data_my_account.my_account.url.pdp,
       env.user_qta.user_tlv.user_name,
-      env.user_qta.user_tlv.password,
+      env.user_qta.user_tlv.password
     )
     cy.confirmRegionalizationQta(validation_data_reg.regionalization.sellers.sellerName_mooca_qta)
   })
@@ -135,7 +135,7 @@ describe('Regionalizado Mooca Não Personificado', () => {
     cy.validBreadcrumb(
       validation_data_pdp.breadcrumb.primeiro_link,
       validation_data_pdp.breadcrumb.segundo_link,
-      validation_data_pdp.breadcrumb.terceiro_link,
+      validation_data_pdp.breadcrumb.terceiro_link
     )
   })
   it('04 PDP - Validate button increase product quantity', () => {
@@ -174,7 +174,7 @@ describe('Regionalizado Benfica Não Personificado', () => {
     cy.nopersonifiedQta(
       Cypress.config().url_loja + validation_data_my_account.my_account.url.pdp,
       env.user_qta.user_tlv.user_name,
-      env.user_qta.user_tlv.password,
+      env.user_qta.user_tlv.password
     )
     cy.modalSelectSeller()
     cy.modalDropdowSeller(validation_data_reg.regionalization.sellers.sellerName_benfica)
@@ -190,7 +190,7 @@ describe('Regionalizado Benfica Não Personificado', () => {
     cy.validBreadcrumb(
       validation_data_pdp.breadcrumb.primeiro_link,
       validation_data_pdp.breadcrumb.segundo_link,
-      validation_data_pdp.breadcrumb.terceiro_link,
+      validation_data_pdp.breadcrumb.terceiro_link
     )
   })
   it('04 PDP - Validate button increase product quantity', () => {

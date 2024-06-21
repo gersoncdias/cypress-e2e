@@ -16,8 +16,13 @@ import '@shelex/cypress-allure-plugin'
 import './commands/my_account_commands'
 import './commands/pre_condition_commands'
 
+import cypressGrep from '@cypress/grep'
+cypressGrep()
 Cypress.on('uncaught:exception', () => {
   return false
+})
+Cypress.on('log:added', (log) => {
+  console.log(log)
 })
 
 beforeEach(() => {

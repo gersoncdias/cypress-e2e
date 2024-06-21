@@ -1,19 +1,23 @@
 const env = require('../../../cypress.env.json')
 const validation_data_reg = require('../../../fixtures/regionalization.json')
 const validation_data_my_account = require('../../../fixtures/my_account.json')
+const validation_data_stores = require('../../../fixtures/storeSettings.json')
 
 describe('Não Regionalizado Logado', () => {
   beforeEach(() => {
-    cy.loggedQecom(
-      Cypress.config().baseUrl + validation_data_my_account.my_account.url.account,
-      validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
     )
+    cy.visit(Cypress.config().baseUrl + validation_data_my_account.my_account.url.account)
   })
-  it('00 MA - Validate acess', () => {
+  it('00 MA - Validate acess', { tags: ['@smoke', '@critical'] }, () => {
     cy.acessMyAccount(Cypress.config().baseUrl + validation_data_my_account.my_account.url.my_account)
   })
-  it('01 MA - Validate person data', () => {
+  it('01 MA - Validate person data', { tags: ['@smoke'] }, () => {
     cy.personData(validation_data_my_account.my_account.menu.personal_data)
     cy.modalPersonData()
     cy.modalName(
@@ -28,7 +32,7 @@ describe('Não Regionalizado Logado', () => {
     cy.phoneNumber(validation_data_my_account.my_account.labels.phone_number, env.user_qecom.phone_number)
     cy.btnEdit(validation_data_my_account.my_account.labels.btn_edit)
   })
-  it('02 MA - Validate address', () => {
+  it('02 MA - Validate address', { tags: ['@smoke'] }, () => {
     cy.adress(validation_data_my_account.my_account.menu.address)
     cy.modalAdressTitle(validation_data_my_account.my_account.menu.address)
     cy.modalAddAdress(validation_data_my_account.my_account.menu.add_adress)
@@ -38,7 +42,7 @@ describe('Não Regionalizado Logado', () => {
     cy.myOrder(validation_data_my_account.my_account.menu.order)
     cy.modalOrder(validation_data_my_account.my_account.menu.without_order)
   })
-  it('04 MA - Validate my orders', () => {
+  it('04 MA - Validate my cards', () => {
     cy.myCards(validation_data_my_account.my_account.menu.cards)
     cy.modalOrder(validation_data_my_account.my_account.menu.without_cards)
   })
@@ -56,10 +60,10 @@ describe('Não Regionalizado Logado', () => {
       validation_data_my_account.my_account.menu.my_balance
     )
   })
-  it.skip('10 MA - Validate CredObra balance in the "My Credits" tab', () => {
+  it('10 MA - Validate CredObra balance in the "My Credits" tab', () => {
     cy.creditMyWorks(validation_data_my_account.my_account.menu.my_works)
   })
-  it('16 MA - Validate to go out', () => {
+  it('16 MA - Validate to go out', { tags: ['@smoke', '@critical'] }, () => {
     cy.btnExit(validation_data_my_account.my_account.menu.exit)
     cy.modalExit(
       validation_data_my_account.my_account.menu.claim_exit,
@@ -70,16 +74,23 @@ describe('Não Regionalizado Logado', () => {
 })
 describe('Regionalizado Benfica Logado', () => {
   beforeEach(() => {
-    cy.loggedQecom(
-      Cypress.config().baseUrl + validation_data_my_account.my_account.url.my_account,
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
+    )
+    cy.visit(Cypress.config().baseUrl + validation_data_my_account.my_account.url.my_account)
+    cy.setRegionalization(
       validation_data_reg.regionalization.sellers.benfica,
       validation_data_reg.regionalization.sellers.sellerName_benfica
     )
   })
-  it('00 MA - Validate acess', () => {
+  it('00 MA - Validate acess', { tags: ['@smoke', '@critical'] }, () => {
     cy.acessMyAccount(Cypress.config().baseUrl + validation_data_my_account.my_account.url.my_account)
   })
-  it('01 MA - Validate person data', () => {
+  it('01 MA - Validate person data', { tags: ['@smoke'] }, () => {
     cy.personData(validation_data_my_account.my_account.menu.personal_data)
     cy.modalPersonData()
     cy.modalName(
@@ -94,7 +105,7 @@ describe('Regionalizado Benfica Logado', () => {
     cy.phoneNumber(validation_data_my_account.my_account.labels.phone_number, env.user_qecom.phone_number)
     cy.btnEdit(validation_data_my_account.my_account.labels.btn_edit)
   })
-  it('02 MA - Validate address', () => {
+  it('02 MA - Validate address', { tags: ['@smoke'] }, () => {
     cy.adress(validation_data_my_account.my_account.menu.address)
     cy.modalAdressTitle(validation_data_my_account.my_account.menu.address)
     cy.modalAddAdress(validation_data_my_account.my_account.menu.add_adress)
@@ -104,7 +115,7 @@ describe('Regionalizado Benfica Logado', () => {
     cy.myOrder(validation_data_my_account.my_account.menu.order)
     cy.modalOrder(validation_data_my_account.my_account.menu.without_order)
   })
-  it('04 MA - Validate my orders', () => {
+  it('04 MA - Validate my cards', () => {
     cy.myCards(validation_data_my_account.my_account.menu.cards)
     cy.modalOrder(validation_data_my_account.my_account.menu.without_cards)
   })
@@ -125,7 +136,7 @@ describe('Regionalizado Benfica Logado', () => {
   it.skip('10 MA - Validate CredObra balance in the "My Credits" tab', () => {
     cy.creditMyWorks(validation_data_my_account.my_account.menu.my_works)
   })
-  it('16 MA - Validate to go out', () => {
+  it('16 MA - Validate to go out', { tags: ['@smoke', '@critical'] }, () => {
     cy.btnExit(validation_data_my_account.my_account.menu.exit)
     cy.modalExit(
       validation_data_my_account.my_account.menu.claim_exit,
@@ -136,16 +147,23 @@ describe('Regionalizado Benfica Logado', () => {
 })
 describe('Regionalizado Mooca Logado', () => {
   beforeEach(() => {
-    cy.loggedQecom(
-      Cypress.config().baseUrl + validation_data_my_account.my_account.url.my_account,
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
+    )
+    cy.visit(Cypress.config().baseUrl + validation_data_my_account.my_account.url.my_account)
+    cy.setRegionalization(
       validation_data_reg.regionalization.sellers.mooca,
       validation_data_reg.regionalization.sellers.sellerName_mooca
     )
   })
-  it('00 MA - Validate acess', () => {
+  it('00 MA - Validate acess', { tags: ['@smoke', '@critical'] }, () => {
     cy.acessMyAccount(Cypress.config().baseUrl + validation_data_my_account.my_account.url.my_account)
   })
-  it('01 MA - Validate person data', () => {
+  it('01 MA - Validate person data', { tags: ['@smoke'] }, () => {
     cy.personData(validation_data_my_account.my_account.menu.personal_data)
     cy.modalPersonData()
     cy.modalName(
@@ -160,7 +178,7 @@ describe('Regionalizado Mooca Logado', () => {
     cy.phoneNumber(validation_data_my_account.my_account.labels.phone_number, env.user_qecom.phone_number)
     cy.btnEdit(validation_data_my_account.my_account.labels.btn_edit)
   })
-  it('02 MA - Validate address', () => {
+  it('02 MA - Validate address', { tags: ['@smoke'] }, () => {
     cy.adress(validation_data_my_account.my_account.menu.address)
     cy.modalAdressTitle(validation_data_my_account.my_account.menu.address)
     cy.modalAddAdress(validation_data_my_account.my_account.menu.add_adress)
@@ -170,7 +188,7 @@ describe('Regionalizado Mooca Logado', () => {
     cy.myOrder(validation_data_my_account.my_account.menu.order)
     cy.modalOrder(validation_data_my_account.my_account.menu.without_order)
   })
-  it('04 MA - Validate my orders', () => {
+  it('04 MA - Validate my cards', () => {
     cy.myCards(validation_data_my_account.my_account.menu.cards)
     cy.modalOrder(validation_data_my_account.my_account.menu.without_cards)
   })
@@ -188,10 +206,10 @@ describe('Regionalizado Mooca Logado', () => {
       validation_data_my_account.my_account.menu.my_balance
     )
   })
-  it.skip('10 MA - Validate CredObra balance in the "My Credits" tab', () => {
+  it('10 MA - Validate CredObra balance in the "My Credits" tab', () => {
     cy.creditMyWorks(validation_data_my_account.my_account.menu.my_works)
   })
-  it('16 MA - Validate to go out', () => {
+  it('16 MA - Validate to go out', { tags: ['@smoke', '@critical'] }, () => {
     cy.btnExit(validation_data_my_account.my_account.menu.exit)
     cy.modalExit(
       validation_data_my_account.my_account.menu.claim_exit,

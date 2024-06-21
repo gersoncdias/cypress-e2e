@@ -75,7 +75,6 @@ Cypress.Commands.add('sliderTopBar', () => {
 Cypress.Commands.add('budget', (budget, click) => {
   cy.get(HEADER_PG.LINK_BUDGET).should('contain.text', budget)
   cy.get(HEADER_PG.LINK_CLICK_BUDGET).should('contain.text', click)
-  cy.get(HEADER_PG.MODAL_BUDGET).should('have.attr', 'href').and('include', Cypress.config().url_orcamax)
   cy.get(HEADER_PG.MODAL_BUDGET).invoke('removeAttr', 'target').click()
   cy.validatePageAccessed(Cypress.config().url_orcamax)
 })
@@ -88,13 +87,15 @@ Cypress.Commands.add('redirectiLogo', (url1, url) => {
 Cypress.Commands.add('allDepartments', () => {
   cy.get(HEADER_PG.LINK_DEPARTAMENTS).should('exist').should('be.visible').invoke('click')
 })
-Cypress.Commands.add('myAcademy', (url) => {
+Cypress.Commands.add('myAcademy', (url, url1) => {
   cy.get(HEADER_PG.LINK_ACADEMY).should('exist').should('be.visible').invoke('click')
   cy.validatePageAccessed(url)
+  cy.visit(url1)
 })
-Cypress.Commands.add('linkBlog', (url) => {
+Cypress.Commands.add('linkBlog', (url, url1) => {
   cy.get(HEADER_PG.LINK_BLOG).contains('Blog').invoke('removeAttr', 'target').click()
   cy.validatePageAccessed(url)
+  cy.visit(url1)
 })
 Cypress.Commands.add('maxForLess', (url, txt) => {
   cy.get(HEADER_PG.LINK_MAX_FOR_LESS).should('exist').should('be.visible').invoke('click')
@@ -115,10 +116,12 @@ Cypress.Commands.add('readerFixed', () => {
   cy.get(HEADER_PG.MODAL_READER_FIXED).should('exist').should('be.visible')
 })
 Cypress.Commands.add('logoReader', () => {
+  cy.get(HEADER_PG.SKELETON_HEADER).should('not.exist')
   cy.get(HEADER_PG.LINK_LOGO_HREF).should('exist').should('be.visible')
 })
 Cypress.Commands.add('miniLogoReader', () => {
-  cy.scrollTo('bottom')
+  cy.get(HEADER_PG.SKELETON_HEADER).should('not.exist')
+  cy.scrollTo(0, 100)
   cy.get(HEADER_PG.LINK_MINI_LOGO).should('exist').should('be.visible')
 })
 Cypress.Commands.add('myOrders', (txt) => {

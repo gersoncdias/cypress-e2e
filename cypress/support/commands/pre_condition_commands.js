@@ -3,6 +3,7 @@ const cookies_data = require('../../fixtures/cookies.json')
 const validation_data_stores = require('../../fixtures/storeSettings.json')
 
 Cypress.Commands.add('loggedQecom', (url, seller, sellerName) => {
+  //cy.intercept(`${Cypress.config('baseUrl')}api/vtexid/pub/authenticated/user`).as('getUser')
   cy.loginByApi(
     env.user_qecom.email,
     env.user_qecom.password,

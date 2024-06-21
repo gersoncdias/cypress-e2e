@@ -19,6 +19,24 @@ Cypress.Commands.add('validBreadcrumb_plp', (txt) => {
 Cypress.Commands.add('validFilter', (txt) => {
   cy.get(PLP_PG.BTN_FILTER).should('be.visible').and('not.be.disabled').contains(txt).click()
 })
+Cypress.Commands.add('validFilterMobile', (txt) => {
+  cy.get(PLP_PG.BTN_FILTER_MOBILE).should('be.visible').contains(txt).click()
+})
+Cypress.Commands.add('tagFilter', (value) => {
+  cy.get(PLP_PG.TAG_FILTER_MOBILE).should('exist').contains(value)
+})
+Cypress.Commands.add('tagFilterEmpty', () => {
+  cy.get(PLP_PG.TAG_FILTER_MOBILE).should('not.exist')
+})
+Cypress.Commands.add('removeFilterMobile', () => {
+  cy.get(PLP_PG.BTN_REMOVE_FILTER_MOBILE).click()
+})
+Cypress.Commands.add('ModalFilterMobile', (value) => {
+  cy.get(PLP_PG.MODAL_FILTER_MOBILE).click()
+})
+Cypress.Commands.add('validCategotyMobile', () => {
+  cy.get(PLP_PG.INPUT_FILTER_MOBILE).click()
+})
 Cypress.Commands.add('validCategoty', () => {
   cy.get(PLP_PG.INPUT_FILTER).check()
 })
@@ -41,8 +59,8 @@ Cypress.Commands.add('validOedenig', (txt, order) => {
 Cypress.Commands.add('validShowMore', (txt) => {
   cy.scrollTo('center', { duration: 3000 })
   cy.get(PLP_PG.MODAL_CARD_GALLERY).should('be.visible').should('have.length', 12)
-  cy.get(PLP_PG.BTN_SHOW_MORE).should('be.visible').and('contain', txt).click()
-  cy.scrollTo('center', { duration: 3000 })
+  cy.get(PLP_PG.BTN_SHOW_MORE, { timeout: 3000 }).should('be.visible').and('contain', txt).click()
+  cy.scrollTo('bottom', { duration: 3000 })
   cy.get(PLP_PG.MODAL_CARD_GALLERY).should('be.visible').should('have.length', 24)
 })
 Cypress.Commands.add('validCard', () => {
@@ -57,7 +75,7 @@ Cypress.Commands.add('validAddProductCard', () => {
     })
 })
 Cypress.Commands.add('clickWishlist', () => {
-  cy.wait(4000)
+  cy.wait(2000)
   cy.get(PLP_PG.MODAL_CARD_GALLERY)
     .should('be.visible')
     .first()

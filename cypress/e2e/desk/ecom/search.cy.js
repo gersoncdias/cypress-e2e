@@ -1,17 +1,21 @@
+const env = require('../../../cypress.env.json')
 const validation_data_search = require('../../../fixtures/search.json')
 const validation_data_reg = require('../../../fixtures/regionalization.json')
-const validation_data_login = require('../../../fixtures/login.json')
+const validation_data_stores = require('../../../fixtures/storeSettings.json')
 
 describe('Não Regionalizado Logado', () => {
   beforeEach(() => {
-    cy.loggedQecom(
-      Cypress.config().baseUrl,
-      validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
     )
-    cy.confirmRegionalization(validation_data_reg.regionalization.sellers.sellerName_mooca)
+    cy.visit(Cypress.config().baseUrl)
   })
-  it('00 SB - Validate suggestion', () => {
+  it('00 SB - Validate suggestion', { tags: ['@smoke'] }, () => {
+    cy.confirmRegionalization(validation_data_reg.regionalization.sellers.sellerName_mooca)
     cy.modalSearch()
     cy.inputSearch(validation_data_search.search.input_search.placeholder)
     cy.inputText(validation_data_search.search.input_text.text_suggestion, 4)
@@ -26,7 +30,7 @@ describe('Não Regionalizado Logado', () => {
     cy.inputSearch(validation_data_search.search.input_search.placeholder)
     cy.modalSearchSugestions(validation_data_search.search.input_text.text_not_found)
   })
-  it('03 SB - Validate image', () => {
+  it('03 SB - Validate image', { tags: ['@smoke'] }, () => {
     cy.modalSearch()
     cy.inputSearch(validation_data_search.search.input_search.placeholder)
     cy.inputText(validation_data_search.search.input_text.text_suggestion, 4)
@@ -35,14 +39,20 @@ describe('Não Regionalizado Logado', () => {
 })
 describe('Regionalizado Benfica Logado', () => {
   beforeEach(() => {
-    cy.loggedQecom(
-      Cypress.config().baseUrl,
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
+    )
+    cy.visit(Cypress.config().baseUrl)
+    cy.setRegionalization(
       validation_data_reg.regionalization.sellers.benfica,
       validation_data_reg.regionalization.sellers.sellerName_benfica
     )
-    cy.confirmRegionalization(validation_data_reg.regionalization.sellers.sellerName_benfica)
   })
-  it('00 SB - Validate suggestion', () => {
+  it('00 SB - Validate suggestion', { tags: ['@smoke'] }, () => {
     cy.modalSearch()
     cy.inputSearch(validation_data_search.search.input_search.placeholder)
     cy.inputText(validation_data_search.search.input_text.text_suggestion, 4)
@@ -57,7 +67,7 @@ describe('Regionalizado Benfica Logado', () => {
     cy.inputSearch(validation_data_search.search.input_search.placeholder)
     cy.modalSearchSugestions(validation_data_search.search.input_text.text_not_found)
   })
-  it('03 SB - Validate image', () => {
+  it('03 SB - Validate image', { tags: ['@smoke'] }, () => {
     cy.modalSearch()
     cy.inputSearch(validation_data_search.search.input_search.placeholder)
     cy.inputText(validation_data_search.search.input_text.text_suggestion, 4)
@@ -66,14 +76,20 @@ describe('Regionalizado Benfica Logado', () => {
 })
 describe('Regionalizado Mooca Logado', () => {
   beforeEach(() => {
-    cy.loggedQecom(
-      Cypress.config().baseUrl,
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
+    )
+    cy.visit(Cypress.config().baseUrl)
+    cy.setRegionalization(
       validation_data_reg.regionalization.sellers.mooca,
       validation_data_reg.regionalization.sellers.sellerName_mooca
     )
-    cy.confirmRegionalization(validation_data_reg.regionalization.sellers.sellerName_mooca)
   })
-  it('00 SB - Validate suggestion', () => {
+  it('00 SB - Validate suggestion', { tags: ['@smoke'] }, () => {
     cy.modalSearch()
     cy.inputSearch(validation_data_search.search.input_search.placeholder)
     cy.inputText(validation_data_search.search.input_text.text_suggestion, 4)
@@ -88,7 +104,7 @@ describe('Regionalizado Mooca Logado', () => {
     cy.inputSearch(validation_data_search.search.input_search.placeholder)
     cy.modalSearchSugestions(validation_data_search.search.input_text.text_not_found)
   })
-  it('03 SB - Validate image', () => {
+  it('03 SB - Validate image', { tags: ['@smoke'] }, () => {
     cy.modalSearch()
     cy.inputSearch(validation_data_search.search.input_search.placeholder)
     cy.inputText(validation_data_search.search.input_text.text_suggestion, 4)
@@ -97,15 +113,9 @@ describe('Regionalizado Mooca Logado', () => {
 })
 describe('Não Regionalizado Não Logado', () => {
   beforeEach(() => {
-    cy.noLoggedQecom(
-      Cypress.config().baseUrl,
-      validation_data_login.interface.without_logged,
-      validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca
-    )
-    cy.confirmRegionalization(validation_data_reg.regionalization.sellers.sellerName_mooca)
+    cy.visit(Cypress.config().baseUrl)
   })
-  it('00 SB - Validate suggestion', () => {
+  it('00 SB - Validate suggestion', { tags: ['@smoke'] }, () => {
     cy.modalSearch()
     cy.inputSearch(validation_data_search.search.input_search.placeholder)
     cy.inputText(validation_data_search.search.input_text.text_suggestion, 4)
@@ -120,7 +130,7 @@ describe('Não Regionalizado Não Logado', () => {
     cy.inputSearch(validation_data_search.search.input_search.placeholder)
     cy.modalSearchSugestions(validation_data_search.search.input_text.text_not_found)
   })
-  it('03 SB - Validate image', () => {
+  it('03 SB - Validate image', { tags: ['@smoke'] }, () => {
     cy.modalSearch()
     cy.inputSearch(validation_data_search.search.input_search.placeholder)
     cy.inputText(validation_data_search.search.input_text.text_suggestion, 4)
@@ -129,15 +139,13 @@ describe('Não Regionalizado Não Logado', () => {
 })
 describe('Regionalizado Mooca Não Logado', () => {
   beforeEach(() => {
-    cy.noLoggedQecom(
-      Cypress.config().baseUrl,
-      validation_data_login.interface.without_logged,
+    cy.visit(Cypress.config().baseUrl)
+    cy.setRegionalization(
       validation_data_reg.regionalization.sellers.mooca,
       validation_data_reg.regionalization.sellers.sellerName_mooca
     )
-    cy.confirmRegionalization(validation_data_reg.regionalization.sellers.sellerName_mooca)
   })
-  it('00 SB - Validate suggestion', () => {
+  it('00 SB - Validate suggestion', { tags: ['@smoke'] }, () => {
     cy.modalSearch()
     cy.inputSearch(validation_data_search.search.input_search.placeholder)
     cy.inputText(validation_data_search.search.input_text.text_suggestion, 4)
@@ -152,7 +160,7 @@ describe('Regionalizado Mooca Não Logado', () => {
     cy.inputSearch(validation_data_search.search.input_search.placeholder)
     cy.modalSearchSugestions(validation_data_search.search.input_text.text_not_found)
   })
-  it('03 SB - Validate image', () => {
+  it('03 SB - Validate image', { tags: ['@smoke'] }, () => {
     cy.modalSearch()
     cy.inputSearch(validation_data_search.search.input_search.placeholder)
     cy.inputText(validation_data_search.search.input_text.text_suggestion, 4)
@@ -161,15 +169,13 @@ describe('Regionalizado Mooca Não Logado', () => {
 })
 describe('Regionalizado Benfica Não Logado', () => {
   beforeEach(() => {
-    cy.noLoggedQecom(
-      Cypress.config().baseUrl,
-      validation_data_login.interface.without_logged,
+    cy.visit(Cypress.config().baseUrl)
+    cy.setRegionalization(
       validation_data_reg.regionalization.sellers.benfica,
       validation_data_reg.regionalization.sellers.sellerName_benfica
     )
-    cy.confirmRegionalization(validation_data_reg.regionalization.sellers.sellerName_benfica)
   })
-  it('00 SB - Validate suggestion', () => {
+  it('00 SB - Validate suggestion', { tags: ['@smoke'] }, () => {
     cy.modalSearch()
     cy.inputSearch(validation_data_search.search.input_search.placeholder)
     cy.inputText(validation_data_search.search.input_text.text_suggestion, 4)
@@ -184,7 +190,7 @@ describe('Regionalizado Benfica Não Logado', () => {
     cy.inputSearch(validation_data_search.search.input_search.placeholder)
     cy.modalSearchSugestions(validation_data_search.search.input_text.text_not_found)
   })
-  it('03 SB - Validate image', () => {
+  it('03 SB - Validate image', { tags: ['@smoke'] }, () => {
     cy.modalSearch()
     cy.inputSearch(validation_data_search.search.input_search.placeholder)
     cy.inputText(validation_data_search.search.input_text.text_suggestion, 4)

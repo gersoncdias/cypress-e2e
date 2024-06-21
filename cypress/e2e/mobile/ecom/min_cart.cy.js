@@ -5,7 +5,7 @@ const validation_data_products = require('../../../fixtures/products.json')
 const validation_data_reg = require('../../../fixtures/regionalization.json')
 
 describe('Não Regionalizado Logado', () => {
-  it('01 MC - Validate empty mini cart', () => {
+  it.only('01 MC - Validate empty mini cart', () => {
     cy.loggedQecomMobile(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.mooca,

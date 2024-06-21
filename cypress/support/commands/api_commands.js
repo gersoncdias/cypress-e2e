@@ -50,7 +50,7 @@ Cypress.Commands.add('generateAndValidateToken', (user_name, password, account_n
   })
 })
 Cypress.Commands.add('removeAllItems', (data_cookie) => {
-  cy.wait(8000)
+  cy.wait(7000)
   cy.getCookie(data_cookie).then((cookie) => {
     if (cookie && cookie.value) {
       const cookieValue = cookie.value.replace('__ofid=', '')

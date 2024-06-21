@@ -9,7 +9,7 @@ Cypress.Commands.add('menuMyAccount', (text) => {
 })
 Cypress.Commands.add('personData', (text) => {
   cy.get(MY_ACCOUNT_PG.LINK_PERSON_DATA).should('exist').should('be.visible').click()
-  cy.get(MY_ACCOUNT_PG.TITLE_PERSON_DATA).should('exist').should('be.visible').should('contain.text', text)
+  cy.get(MY_ACCOUNT_PG.MODAL_ORDER).should('exist').should('be.visible').should('contain.text', text)
 })
 Cypress.Commands.add('modalPersonData', () => {
   cy.get(MY_ACCOUNT_PG.MODAL_PERSON_DATA).should('exist').should('be.visible')
@@ -75,6 +75,10 @@ Cypress.Commands.add('adress', (text) => {
   cy.get(MY_ACCOUNT_PG.LINK_ADRESS).should('exist').should('be.visible').click()
   cy.get(MY_ACCOUNT_PG.LINK_ADRESS).should('exist').should('be.visible').should('contain.text', text)
 })
+Cypress.Commands.add('adresMobile', (text) => {
+  cy.get(MY_ACCOUNT_PG.LINK_ADRESS).should('exist').should('be.visible').click()
+  cy.get(MY_ACCOUNT_PG.LINK_ADRESS_MOBILE).should('exist').should('be.visible').should('contain.text', text)
+})
 Cypress.Commands.add('modalAdressTitle', (text) => {
   cy.get(MY_ACCOUNT_PG.MODAL_ADRESS_TITLE).should('exist').should('be.visible').should('contain.text', text)
 })
@@ -119,7 +123,10 @@ Cypress.Commands.add('modalCredit', (text) => {
   cy.get(MY_ACCOUNT_PG.MODAL_ORDER).should('exist').should('be.visible').should('contain.text', text)
 })
 Cypress.Commands.add('modalOrder', (text) => {
-  cy.get(MY_ACCOUNT_PG.MODAL_ORDER).should('exist').should('be.visible').should('contain.text', text)
+  cy.get(MY_ACCOUNT_PG.MODAL_ORDER, { timeout: 10000 })
+    .should('exist')
+    .should('be.visible')
+    .should('contain.text', text)
 })
 Cypress.Commands.add('modalCards', (text) => {
   cy.get(MY_ACCOUNT_PG.MODAL_ORDER).should('exist').should('be.visible').should('contain.text', text)

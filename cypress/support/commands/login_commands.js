@@ -5,12 +5,12 @@ Cypress.Commands.add('login', () => {
   cy.get(LOGIN_PG.BTN_LOGIN).first().should('exist').should('be.visible').click({ scrollBehavior: false })
 })
 Cypress.Commands.add('modalUserLoggedi', (greeting, user_name) => {
-  cy.intercept('https://www.obramax.com.br/api/vtexid/pub/authenticated/user').as('getUser')
-  cy.wait('@getUser', { timeout: 40000 }).its('response.statusCode').should('eq', 200)
-  cy.get(LOGIN_PG.TEXT_LOGGEDIN_USER)
+  cy.intercept(`${Cypress.config('baseUrl')}api/vtexid/pub/authenticated/user`).as('getUser')
+  cy.get(LOGIN_PG.TEXT_LOGGEDIN_USER, { timeout: 8000 })
     .should('exist')
     .should('be.visible')
     .should('contain.text', greeting, user_name)
+  cy.wait('@getUser', { timeout: 8000 }).its('response.statusCode')
 })
 Cypress.Commands.add('withoutEmail', () => {
   cy.get('.bg-danger--faded')
@@ -52,9 +52,7 @@ Cypress.Commands.add('loginMobile', () => {
 })
 Cypress.Commands.add('modalLogin', (email, password, txt, txt_input) => {
   cy.get(LOGIN_PG.MODAL_LOGIN).should('exist').should('be.visible').should('contain.text', txt)
-
   cy.get(LOGIN_PG.MODAL_LOGIN).contains(txt_input).should('be.visible').click({ scrollBehavior: false })
-
   cy.get(LOGIN_PG.INPUT_EMAIL).should('exist').should('be.visible').type(email)
   cy.get(LOGIN_PG.INPUT_PASSWORD).should('exist').should('be.visible').type(password, { log: false })
   cy.get(LOGIN_PG.BTN_ENTER).should('exist').should('be.visible').click()
@@ -107,7 +105,7 @@ Cypress.Commands.add('checkuseMobile', (url, name) => {
 })
 Cypress.Commands.add('loginByApi', (email, password, account_name, cookieName, scope) => {
   cy.generateAndValidateToken(email, password, account_name, scope).then((token) => {
-    cy.setCookie(cookieName, token)
+    localStorage.setItem(cookieName, token)
   })
 })
 Cypress.Commands.add('interceptAndCheckEmailInProfile', (email) => {

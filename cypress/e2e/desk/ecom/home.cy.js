@@ -1,16 +1,23 @@
+const env = require('../../../cypress.env.json')
 const cookies_data = require('../../../fixtures/cookies.json')
 const validation_data_home = require('../../../fixtures/home.json')
 const validation_data_toast = require('../../../fixtures/toast.json')
-const validation_data_login = require('../../../fixtures/login.json')
 const validation_data_mini_cart = require('../../../fixtures/mini_cart.json')
 const validation_data_reg = require('../../../fixtures/regionalization.json')
+const validation_data_stores = require('../../../fixtures/storeSettings.json')
 
 describe('Não Regionalizado Logado', () => {
   beforeEach(() => {
-    cy.loggedQecom(Cypress.config().baseUrl, '', '')
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
+    )
+    cy.visit(Cypress.config().baseUrl)
   })
-
-  it('00 HO - Validate the Acces of the Site', () => {
+  it('00 HO - Validate the Acces of the Site', { tags: ['@smoke', '@critical'] }, () => {
     cy.validatePageAccessed(Cypress.config().baseUrl)
     cy.confirmRegionalization(validation_data_reg.regionalization.sellers.sellerName_mooca)
     cy.logoReader()
@@ -41,14 +48,14 @@ describe('Não Regionalizado Logado', () => {
     cy.regionalization(validation_data_reg.regionalization.sellers.cep_without_action)
     cy.toastRegionalization(validation_data_reg.regionalization.toast_regionalization.without_delivery)
   })
-  it('05 HO - Shelf Add Product to Mini Cart', () => {
+  it('05 HO - Shelf Add Product to Mini Cart', { tags: ['@smoke', '@critical'] }, () => {
     cy.scrollTo(0, 600)
     cy.removeAllItems(cookies_data.checkout.order_forme)
     cy.componetShelf()
     cy.clickMiddleProduct()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
   })
-  it('06 HO - Shelf Visible Images', () => {
+  it('06 HO - Shelf Visible Images', { tags: ['@smoke', '@critical'] }, () => {
     cy.departmentShelf(validation_data_home.home_page.department_shelf.title)
   })
   it('07 HO - shelf Navigation', () => {
@@ -65,7 +72,7 @@ describe('Não Regionalizado Logado', () => {
   it('09 HO - Validate Department Shelf', () => {
     cy.departmentShelf(validation_data_home.home_page.department_shelf.title)
   })
-  it('10 HO - Validate Banners', () => {
+  it('10 HO - Validate Banners', { tags: ['@smoke', '@critical'] }, () => {
     cy.validaBanners()
   })
   it('11 HO - Validate Double Banners', () => {
@@ -85,7 +92,7 @@ describe('Não Regionalizado Logado', () => {
       validation_data_home.home_page.newsletter.name
     )
   })
-  it('13 HO - Add Product to Cart', () => {
+  it('13 HO - Add Product to Cart', { tags: ['@smoke', '@critical'] }, () => {
     cy.scrollTo(0, 600)
     cy.componetShelf()
     cy.clickMiddleProduct()
@@ -103,13 +110,20 @@ describe('Não Regionalizado Logado', () => {
 })
 describe('Regionalizado Benfica Logado', () => {
   beforeEach(() => {
-    cy.loggedQecom(
-      Cypress.config().baseUrl,
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
+    )
+    cy.visit(Cypress.config().baseUrl)
+    cy.setRegionalization(
       validation_data_reg.regionalization.sellers.benfica,
       validation_data_reg.regionalization.sellers.sellerName_benfica
     )
   })
-  it('00 HO - Validate the Acces of the Site', () => {
+  it('00 HO - Validate the Acces of the Site', { tags: ['@smoke', 'critical'] }, () => {
     cy.validatePageAccessed(Cypress.config().baseUrl)
     cy.confirmRegionalization(validation_data_reg.regionalization.sellers.sellerName_benfica)
     cy.logoReader()
@@ -140,14 +154,14 @@ describe('Regionalizado Benfica Logado', () => {
     cy.regionalization(validation_data_reg.regionalization.sellers.cep_without_action)
     cy.toastRegionalization(validation_data_reg.regionalization.toast_regionalization.without_delivery)
   })
-  it('05 HO - Shelf Add Product to Mini Cart', () => {
+  it('05 HO - Shelf Add Product to Mini Cart', { tags: ['@smoke', '@critical'] }, () => {
     cy.scrollTo(0, 600)
     cy.removeAllItems(cookies_data.checkout.order_forme)
     cy.componetShelf()
     cy.clickMiddleProduct()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
   })
-  it('06 HO - Shelf Visible Images', () => {
+  it('06 HO - Shelf Visible Images', { tags: ['@smoke', '@critical'] }, () => {
     cy.departmentShelf(validation_data_home.home_page.department_shelf.title)
   })
   it('07 HO - shelf Navigation', () => {
@@ -164,7 +178,7 @@ describe('Regionalizado Benfica Logado', () => {
   it('09 HO - Validate Department Shelf', () => {
     cy.departmentShelf(validation_data_home.home_page.department_shelf.title)
   })
-  it('10 HO - Validate Banners', () => {
+  it('10 HO - Validate Banners', { tags: ['@smoke', '@critical'] }, () => {
     cy.validaBanners()
   })
   it('11 HO - Validate Double Banners', () => {
@@ -184,7 +198,7 @@ describe('Regionalizado Benfica Logado', () => {
       validation_data_home.home_page.newsletter.name
     )
   })
-  it('13 HO - Add Product to Cart', () => {
+  it('13 HO - Add Product to Cart', { tags: ['@smoke', '@critical'] }, () => {
     cy.scrollTo(0, 600)
     cy.componetShelf()
     cy.clickMiddleProduct()
@@ -217,13 +231,20 @@ describe('Regionalizado Benfica Logado', () => {
 })
 describe('Regionalizado Mooca Logado', () => {
   beforeEach(() => {
-    cy.loggedQecom(
-      Cypress.config().baseUrl,
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
+    )
+    cy.visit(Cypress.config().baseUrl)
+    cy.setRegionalization(
       validation_data_reg.regionalization.sellers.mooca,
       validation_data_reg.regionalization.sellers.sellerName_mooca
     )
   })
-  it('00 HO - Validate the Acces of the Site', () => {
+  it('00 HO - Validate the Acces of the Site', { tags: ['@smoke', '@critical'] }, () => {
     cy.validatePageAccessed(Cypress.config().baseUrl)
     cy.confirmRegionalization(validation_data_reg.regionalization.sellers.sellerName_mooca)
     cy.logoReader()
@@ -254,14 +275,14 @@ describe('Regionalizado Mooca Logado', () => {
     cy.regionalization(validation_data_reg.regionalization.sellers.cep_without_action)
     cy.toastRegionalization(validation_data_reg.regionalization.toast_regionalization.without_delivery)
   })
-  it('05 HO - Shelf Add Product to Mini Cart', () => {
+  it('05 HO - Shelf Add Product to Mini Cart', { tags: ['@smoke', '@critical'] }, () => {
     cy.scrollTo(0, 600)
     cy.removeAllItems(cookies_data.checkout.order_forme)
     cy.componetShelf()
     cy.clickMiddleProduct()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
   })
-  it('06 HO - Shelf Visible Images', () => {
+  it('06 HO - Shelf Visible Images', { tags: ['@smoke', '@critical'] }, () => {
     cy.departmentShelf(validation_data_home.home_page.department_shelf.title)
   })
   it('07 HO - shelf Navigation', () => {
@@ -278,7 +299,7 @@ describe('Regionalizado Mooca Logado', () => {
   it('09 HO - Validate Department Shelf', () => {
     cy.departmentShelf(validation_data_home.home_page.department_shelf.title)
   })
-  it('10 HO - Validate Banners', () => {
+  it('10 HO - Validate Banners', { tags: ['@smoke', '@critical'] }, () => {
     cy.validaBanners()
   })
   it('11 HO - Validate Double Banners', () => {
@@ -298,7 +319,7 @@ describe('Regionalizado Mooca Logado', () => {
       validation_data_home.home_page.newsletter.name
     )
   })
-  it('13 HO - Add Product to Cart', () => {
+  it('13 HO - Add Product to Cart', { tags: ['@smoke', '@critical'] }, () => {
     cy.scrollTo(0, 600)
     cy.componetShelf()
     cy.clickMiddleProduct()
@@ -331,14 +352,9 @@ describe('Regionalizado Mooca Logado', () => {
 })
 describe('Não Regionalizado Não Logado', () => {
   beforeEach(() => {
-    cy.noLoggedQecom(
-      Cypress.config().baseUrl,
-      validation_data_login.interface.without_logged,
-      validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca
-    )
+    cy.visit(Cypress.config().baseUrl)
   })
-  it('00 HO - Validate the Acces of the Site', () => {
+  it('00 HO - Validate the Acces of the Site', { tags: ['@smoke', '@critical'] }, () => {
     cy.validatePageAccessed(Cypress.config().baseUrl)
     cy.confirmRegionalization(validation_data_reg.regionalization.sellers.sellerName_mooca)
     cy.logoReader()
@@ -369,14 +385,14 @@ describe('Não Regionalizado Não Logado', () => {
     cy.regionalization(validation_data_reg.regionalization.sellers.cep_without_action)
     cy.toastRegionalization(validation_data_reg.regionalization.toast_regionalization.without_delivery)
   })
-  it('05 HO - Shelf Add Product to Mini Cart', () => {
+  it('05 HO - Shelf Add Product to Mini Cart', { tags: ['@smoke', '@critical'] }, () => {
     cy.scrollTo(0, 600)
     cy.removeAllItems(cookies_data.checkout.order_forme)
     cy.componetShelf()
     cy.clickMiddleProduct()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
   })
-  it('06 HO - Shelf Visible Images', () => {
+  it('06 HO - Shelf Visible Images', { tags: ['@smoke', '@critical'] }, () => {
     cy.departmentShelf(validation_data_home.home_page.department_shelf.title)
   })
   it('07 HO - shelf Navigation', () => {
@@ -390,7 +406,7 @@ describe('Não Regionalizado Não Logado', () => {
   it('09 HO - Validate Department Shelf', () => {
     cy.departmentShelf(validation_data_home.home_page.department_shelf.title)
   })
-  it('10 HO - Validate Banners', () => {
+  it('10 HO - Validate Banners', { tags: ['@smoke', '@critical'] }, () => {
     cy.validaBanners()
   })
   it('11 HO - Validate Double Banners', () => {
@@ -410,7 +426,7 @@ describe('Não Regionalizado Não Logado', () => {
       validation_data_home.home_page.newsletter.name
     )
   })
-  it('13 HO - Add Product to Cart', () => {
+  it('13 HO - Add Product to Cart', { tags: ['@smoke', '@critical'] }, () => {
     cy.scrollTo(0, 600)
     cy.componetShelf()
     cy.clickMiddleProduct()
@@ -428,14 +444,13 @@ describe('Não Regionalizado Não Logado', () => {
 })
 describe('Regionalizado Mooca Não Logado', () => {
   beforeEach(() => {
-    cy.noLoggedQecom(
-      Cypress.config().baseUrl,
-      validation_data_login.interface.without_logged,
+    cy.visit(Cypress.config().baseUrl)
+    cy.setRegionalization(
       validation_data_reg.regionalization.sellers.mooca,
       validation_data_reg.regionalization.sellers.sellerName_mooca
     )
   })
-  it('00 HO - Validate the Acces of the Site', () => {
+  it('00 HO - Validate the Acces of the Site', { tags: ['@smoke', '@critical'] }, () => {
     cy.validatePageAccessed(Cypress.config().baseUrl)
     cy.confirmRegionalization(validation_data_reg.regionalization.sellers.sellerName_mooca)
     cy.logoReader()
@@ -466,14 +481,14 @@ describe('Regionalizado Mooca Não Logado', () => {
     cy.regionalization(validation_data_reg.regionalization.sellers.cep_without_action)
     cy.toastRegionalization(validation_data_reg.regionalization.toast_regionalization.without_delivery)
   })
-  it('05 HO - Shelf Add Product to Mini Cart', () => {
+  it('05 HO - Shelf Add Product to Mini Cart', { tags: ['@smoke', '@critical'] }, () => {
     cy.scrollTo(0, 600)
     cy.removeAllItems(cookies_data.checkout.order_forme)
     cy.componetShelf()
     cy.clickMiddleProduct()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
   })
-  it('06 HO - Shelf Visible Images', () => {
+  it('06 HO - Shelf Visible Images', { tags: ['@smoke', '@critical'] }, () => {
     cy.departmentShelf(validation_data_home.home_page.department_shelf.title)
   })
   it('07 HO - shelf Navigation', () => {
@@ -487,7 +502,7 @@ describe('Regionalizado Mooca Não Logado', () => {
   it('09 HO - Validate Department Shelf', () => {
     cy.departmentShelf(validation_data_home.home_page.department_shelf.title)
   })
-  it('10 HO - Validate Banners', () => {
+  it('10 HO - Validate Banners', { tags: ['@smoke', '@critical'] }, () => {
     cy.validaBanners()
   })
   it('11 HO - Validate Double Banners', () => {
@@ -507,7 +522,7 @@ describe('Regionalizado Mooca Não Logado', () => {
       validation_data_home.home_page.newsletter.name
     )
   })
-  it('13 HO - Add Product to Cart', () => {
+  it('13 HO - Add Product to Cart', { tags: ['@smoke', '@critical'] }, () => {
     cy.scrollTo(0, 600)
     cy.componetShelf()
     cy.clickMiddleProduct()
@@ -540,14 +555,13 @@ describe('Regionalizado Mooca Não Logado', () => {
 })
 describe('Regionalizado Benfica Não Logado', () => {
   beforeEach(() => {
-    cy.regionlizedWithoutLoginQecom(
-      Cypress.config().baseUrl,
-      validation_data_login.interface.without_logged,
+    cy.visit(Cypress.config().baseUrl)
+    cy.setRegionalization(
       validation_data_reg.regionalization.sellers.benfica,
       validation_data_reg.regionalization.sellers.sellerName_benfica
     )
   })
-  it('00 HO - Validate the Acces of the Site', () => {
+  it('00 HO - Validate the Acces of the Site', { tags: ['@smoke', '@critical'] }, () => {
     cy.validatePageAccessed(Cypress.config().baseUrl)
     cy.confirmRegionalization(validation_data_reg.regionalization.sellers.sellerName_benfica)
     cy.logoReader()
@@ -578,14 +592,14 @@ describe('Regionalizado Benfica Não Logado', () => {
     cy.regionalization(validation_data_reg.regionalization.sellers.cep_without_action)
     cy.toastRegionalization(validation_data_reg.regionalization.toast_regionalization.without_delivery)
   })
-  it('05 HO - Shelf Add Product to Mini Cart', () => {
+  it('05 HO - Shelf Add Product to Mini Cart', { tags: ['@smoke', '@critical'] }, () => {
     cy.scrollTo(0, 600)
     cy.removeAllItems(cookies_data.checkout.order_forme)
     cy.componetShelf()
     cy.clickMiddleProduct()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
   })
-  it('06 HO - Shelf Visible Images', () => {
+  it('06 HO - Shelf Visible Images', { tags: ['@smoke', '@critical'] }, () => {
     cy.departmentShelf(validation_data_home.home_page.department_shelf.title)
   })
   it('07 HO - shelf Navigation', () => {
@@ -599,7 +613,7 @@ describe('Regionalizado Benfica Não Logado', () => {
   it('09 HO - Validate Department Shelf', () => {
     cy.departmentShelf(validation_data_home.home_page.department_shelf.title)
   })
-  it('10 HO - Validate Banners', () => {
+  it('10 HO - Validate Banners', { tags: ['@smoke', '@critical'] }, () => {
     cy.validaBanners()
   })
   it('11 HO - Validate Double Banners', () => {
@@ -619,7 +633,7 @@ describe('Regionalizado Benfica Não Logado', () => {
       validation_data_home.home_page.newsletter.name
     )
   })
-  it('13 HO - Add Product to Cart', () => {
+  it('13 HO - Add Product to Cart', { tags: ['@smoke', '@critical'] }, () => {
     cy.scrollTo(0, 600)
     cy.componetShelf()
     cy.clickMiddleProduct()

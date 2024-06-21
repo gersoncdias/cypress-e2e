@@ -36,7 +36,7 @@ Cypress.Commands.add('clickMiddleProduct', () => {
     })
 })
 Cypress.Commands.add('clickMiddleWishlist', () => {
-  cy.wait(4000)
+  cy.wait(2000)
   cy.get(HOME_PG.MODAL_SHELF)
     .find(HOME_PG.MODAL_ITEM_SHELF)
     .then(($elements) => {
@@ -50,8 +50,6 @@ Cypress.Commands.add('clearWishlist', () => {
   cy.get('body').then(($body) => {
     if ($body.find(HOME_PG.BTN_ADD_WISHLIST).length > 0) {
       cy.get(HOME_PG.BTN_ADD_WISHLIST).click({ multiple: true })
-    } else {
-      cy.log('No wishlist items found')
     }
   })
 })
@@ -103,7 +101,9 @@ Cypress.Commands.add(
     cy.get(HOME_PG.NEWSLETTER.IMG_ELEMENT).should('be.visible').and('have.attr', 'src').and('not.be.empty')
     cy.get(HOME_PG.NEWSLETTER.TEXT_DESCRIPTION).should('be.visible').should('contain.text', text_description)
 
-    cy.get(HOME_PG.NEWSLETTER.TEXT_SUCCESS).should('be.visible').should('contain.text', thanks)
+    cy.get(HOME_PG.NEWSLETTER.TEXT_SUCCESS, { timeout: 6000 })
+      .should('be.visible')
+      .should('contain.text', thanks)
   }
 )
 Cypress.Commands.add('validaNewsletterMobile', () => {

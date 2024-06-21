@@ -9,7 +9,7 @@ describe('Não Regionalizado Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.removeAllItems(cookies_data.checkout.order_forme)
     cy.miniCartLogo()
@@ -17,7 +17,7 @@ describe('Não Regionalizado Logado', () => {
       validation_data_mini_cart.cart.mini_cart.title,
       validation_data_mini_cart.cart.mini_cart.empty,
       validation_data_mini_cart.cart.mini_cart.text_description,
-      validation_data_mini_cart.cart.mini_cart.text_btn,
+      validation_data_mini_cart.cart.mini_cart.text_btn
     )
   })
   it('02 MC - Validate remove product', () => {
@@ -33,7 +33,7 @@ describe('Não Regionalizado Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -42,7 +42,7 @@ describe('Não Regionalizado Logado', () => {
       validation_data_mini_cart.cart.mini_cart.title,
       validation_data_mini_cart.cart.mini_cart.empty,
       validation_data_mini_cart.cart.mini_cart.text_description,
-      validation_data_mini_cart.cart.mini_cart.text_btn,
+      validation_data_mini_cart.cart.mini_cart.text_btn
     )
   })
   it('03 MC - Add one product mini cart', () => {
@@ -58,7 +58,7 @@ describe('Não Regionalizado Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -76,7 +76,7 @@ describe('Não Regionalizado Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -95,7 +95,7 @@ describe('Não Regionalizado Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -106,7 +106,7 @@ describe('Não Regionalizado Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.closeMiniCart()
@@ -124,13 +124,13 @@ describe('Não Regionalizado Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
     cy.miniCartAddCart(
       validation_data_mini_cart.cart.mini_cart.total,
-      validation_data_mini_cart.cart.mini_cart.conclude,
+      validation_data_mini_cart.cart.mini_cart.conclude
     )
   })
   it('09 MC - Add 2 identical products', () => {
@@ -146,7 +146,7 @@ describe('Não Regionalizado Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -165,7 +165,7 @@ describe('Não Regionalizado Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 2)
@@ -177,14 +177,14 @@ describe('Regionalizado Benfica Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.benfica,
-      validation_data_reg.regionalization.sellers.sellerName_benfica,
+      validation_data_reg.regionalization.sellers.sellerName_benfica
     )
     cy.miniCartLogo()
     cy.miniCartEmpty(
       validation_data_mini_cart.cart.mini_cart.title,
       validation_data_mini_cart.cart.mini_cart.empty,
       validation_data_mini_cart.cart.mini_cart.text_description,
-      validation_data_mini_cart.cart.mini_cart.text_btn,
+      validation_data_mini_cart.cart.mini_cart.text_btn
     )
   })
   it('02 MC - Validate remove product', () => {
@@ -200,7 +200,7 @@ describe('Regionalizado Benfica Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.benfica,
-      validation_data_reg.regionalization.sellers.sellerName_benfica,
+      validation_data_reg.regionalization.sellers.sellerName_benfica
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -209,7 +209,7 @@ describe('Regionalizado Benfica Logado', () => {
       validation_data_mini_cart.cart.mini_cart.title,
       validation_data_mini_cart.cart.mini_cart.empty,
       validation_data_mini_cart.cart.mini_cart.text_description,
-      validation_data_mini_cart.cart.mini_cart.text_btn,
+      validation_data_mini_cart.cart.mini_cart.text_btn
     )
   })
   it('03 MC - Add one product mini cart', () => {
@@ -225,7 +225,7 @@ describe('Regionalizado Benfica Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.benfica,
-      validation_data_reg.regionalization.sellers.sellerName_benfica,
+      validation_data_reg.regionalization.sellers.sellerName_benfica
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -243,7 +243,7 @@ describe('Regionalizado Benfica Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.benfica,
-      validation_data_reg.regionalization.sellers.sellerName_benfica,
+      validation_data_reg.regionalization.sellers.sellerName_benfica
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -262,7 +262,7 @@ describe('Regionalizado Benfica Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.benfica,
-      validation_data_reg.regionalization.sellers.sellerName_benfica,
+      validation_data_reg.regionalization.sellers.sellerName_benfica
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -273,7 +273,7 @@ describe('Regionalizado Benfica Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.benfica,
-      validation_data_reg.regionalization.sellers.sellerName_benfica,
+      validation_data_reg.regionalization.sellers.sellerName_benfica
     )
     cy.miniCartLogo()
     cy.closeMiniCart()
@@ -291,13 +291,13 @@ describe('Regionalizado Benfica Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.benfica,
-      validation_data_reg.regionalization.sellers.sellerName_benfica,
+      validation_data_reg.regionalization.sellers.sellerName_benfica
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
     cy.miniCartAddCart(
       validation_data_mini_cart.cart.mini_cart.total,
-      validation_data_mini_cart.cart.mini_cart.conclude,
+      validation_data_mini_cart.cart.mini_cart.conclude
     )
   })
   it('09 MC - Add 2 identical products', () => {
@@ -313,7 +313,7 @@ describe('Regionalizado Benfica Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.benfica,
-      validation_data_reg.regionalization.sellers.sellerName_benfica,
+      validation_data_reg.regionalization.sellers.sellerName_benfica
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -332,7 +332,7 @@ describe('Regionalizado Benfica Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.benfica,
-      validation_data_reg.regionalization.sellers.sellerName_benfica,
+      validation_data_reg.regionalization.sellers.sellerName_benfica
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 2)
@@ -344,14 +344,14 @@ describe('Regionalizado Mooca Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCartEmpty(
       validation_data_mini_cart.cart.mini_cart.title,
       validation_data_mini_cart.cart.mini_cart.empty,
       validation_data_mini_cart.cart.mini_cart.text_description,
-      validation_data_mini_cart.cart.mini_cart.text_btn,
+      validation_data_mini_cart.cart.mini_cart.text_btn
     )
   })
   it('02 MC - Validate remove product', () => {
@@ -367,7 +367,7 @@ describe('Regionalizado Mooca Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -376,7 +376,7 @@ describe('Regionalizado Mooca Logado', () => {
       validation_data_mini_cart.cart.mini_cart.title,
       validation_data_mini_cart.cart.mini_cart.empty,
       validation_data_mini_cart.cart.mini_cart.text_description,
-      validation_data_mini_cart.cart.mini_cart.text_btn,
+      validation_data_mini_cart.cart.mini_cart.text_btn
     )
   })
   it('03 MC - Add one product mini cart', () => {
@@ -392,7 +392,7 @@ describe('Regionalizado Mooca Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -410,7 +410,7 @@ describe('Regionalizado Mooca Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -429,7 +429,7 @@ describe('Regionalizado Mooca Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -440,7 +440,7 @@ describe('Regionalizado Mooca Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.closeMiniCart()
@@ -458,13 +458,13 @@ describe('Regionalizado Mooca Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
     cy.miniCartAddCart(
       validation_data_mini_cart.cart.mini_cart.total,
-      validation_data_mini_cart.cart.mini_cart.conclude,
+      validation_data_mini_cart.cart.mini_cart.conclude
     )
   })
   it('09 MC - Add 2 identical products', () => {
@@ -480,7 +480,7 @@ describe('Regionalizado Mooca Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -499,7 +499,7 @@ describe('Regionalizado Mooca Logado', () => {
     cy.loggedQecom(
       Cypress.config().baseUrl,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 2)
@@ -512,14 +512,14 @@ describe('Não Regionalizado Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCartEmpty(
       validation_data_mini_cart.cart.mini_cart.title,
       validation_data_mini_cart.cart.mini_cart.empty,
       validation_data_mini_cart.cart.mini_cart.text_description,
-      validation_data_mini_cart.cart.mini_cart.text_btn,
+      validation_data_mini_cart.cart.mini_cart.text_btn
     )
   })
   it('02 MC - Validate remove product', () => {
@@ -536,7 +536,7 @@ describe('Não Regionalizado Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -545,7 +545,7 @@ describe('Não Regionalizado Não Logado', () => {
       validation_data_mini_cart.cart.mini_cart.title,
       validation_data_mini_cart.cart.mini_cart.empty,
       validation_data_mini_cart.cart.mini_cart.text_description,
-      validation_data_mini_cart.cart.mini_cart.text_btn,
+      validation_data_mini_cart.cart.mini_cart.text_btn
     )
   })
   it('03 MC - Add one product mini cart', () => {
@@ -562,7 +562,7 @@ describe('Não Regionalizado Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -581,7 +581,7 @@ describe('Não Regionalizado Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -601,7 +601,7 @@ describe('Não Regionalizado Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -612,7 +612,7 @@ describe('Não Regionalizado Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.closeMiniCart()
@@ -631,13 +631,13 @@ describe('Não Regionalizado Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
     cy.miniCartAddCart(
       validation_data_mini_cart.cart.mini_cart.total,
-      validation_data_mini_cart.cart.mini_cart.conclude,
+      validation_data_mini_cart.cart.mini_cart.conclude
     )
   })
   it('09 MC - Add 2 identical products', () => {
@@ -654,7 +654,7 @@ describe('Não Regionalizado Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -674,7 +674,7 @@ describe('Não Regionalizado Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 2)
@@ -687,14 +687,14 @@ describe('Regionalizado Mooca Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCartEmpty(
       validation_data_mini_cart.cart.mini_cart.title,
       validation_data_mini_cart.cart.mini_cart.empty,
       validation_data_mini_cart.cart.mini_cart.text_description,
-      validation_data_mini_cart.cart.mini_cart.text_btn,
+      validation_data_mini_cart.cart.mini_cart.text_btn
     )
   })
   it('02 MC - Validate remove product', () => {
@@ -711,7 +711,7 @@ describe('Regionalizado Mooca Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -720,7 +720,7 @@ describe('Regionalizado Mooca Não Logado', () => {
       validation_data_mini_cart.cart.mini_cart.title,
       validation_data_mini_cart.cart.mini_cart.empty,
       validation_data_mini_cart.cart.mini_cart.text_description,
-      validation_data_mini_cart.cart.mini_cart.text_btn,
+      validation_data_mini_cart.cart.mini_cart.text_btn
     )
   })
   it('03 MC - Add one product mini cart', () => {
@@ -737,7 +737,7 @@ describe('Regionalizado Mooca Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -756,7 +756,7 @@ describe('Regionalizado Mooca Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -776,7 +776,7 @@ describe('Regionalizado Mooca Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -787,7 +787,7 @@ describe('Regionalizado Mooca Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.closeMiniCart()
@@ -806,13 +806,13 @@ describe('Regionalizado Mooca Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
     cy.miniCartAddCart(
       validation_data_mini_cart.cart.mini_cart.total,
-      validation_data_mini_cart.cart.mini_cart.conclude,
+      validation_data_mini_cart.cart.mini_cart.conclude
     )
   })
   it('09 MC - Add 2 identical products', () => {
@@ -829,7 +829,7 @@ describe('Regionalizado Mooca Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -849,7 +849,7 @@ describe('Regionalizado Mooca Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca,
+      validation_data_reg.regionalization.sellers.sellerName_mooca
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 2)
@@ -862,14 +862,14 @@ describe('Regionalizado Benfica Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.benfica,
-      validation_data_reg.regionalization.sellers.sellerName_benfica,
+      validation_data_reg.regionalization.sellers.sellerName_benfica
     )
     cy.miniCartLogo()
     cy.miniCartEmpty(
       validation_data_mini_cart.cart.mini_cart.title,
       validation_data_mini_cart.cart.mini_cart.empty,
       validation_data_mini_cart.cart.mini_cart.text_description,
-      validation_data_mini_cart.cart.mini_cart.text_btn,
+      validation_data_mini_cart.cart.mini_cart.text_btn
     )
   })
   it('02 MC - Validate remove product', () => {
@@ -886,7 +886,7 @@ describe('Regionalizado Benfica Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.benfica,
-      validation_data_reg.regionalization.sellers.sellerName_benfica,
+      validation_data_reg.regionalization.sellers.sellerName_benfica
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -895,7 +895,7 @@ describe('Regionalizado Benfica Não Logado', () => {
       validation_data_mini_cart.cart.mini_cart.title,
       validation_data_mini_cart.cart.mini_cart.empty,
       validation_data_mini_cart.cart.mini_cart.text_description,
-      validation_data_mini_cart.cart.mini_cart.text_btn,
+      validation_data_mini_cart.cart.mini_cart.text_btn
     )
   })
   it('03 MC - Add one product mini cart', () => {
@@ -912,7 +912,7 @@ describe('Regionalizado Benfica Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.benfica,
-      validation_data_reg.regionalization.sellers.sellerName_benfica,
+      validation_data_reg.regionalization.sellers.sellerName_benfica
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -931,7 +931,7 @@ describe('Regionalizado Benfica Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.benfica,
-      validation_data_reg.regionalization.sellers.sellerName_benfica,
+      validation_data_reg.regionalization.sellers.sellerName_benfica
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -951,7 +951,7 @@ describe('Regionalizado Benfica Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.benfica,
-      validation_data_reg.regionalization.sellers.sellerName_benfica,
+      validation_data_reg.regionalization.sellers.sellerName_benfica
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -962,7 +962,7 @@ describe('Regionalizado Benfica Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.benfica,
-      validation_data_reg.regionalization.sellers.sellerName_benfica,
+      validation_data_reg.regionalization.sellers.sellerName_benfica
     )
     cy.miniCartLogo()
     cy.closeMiniCart()
@@ -981,13 +981,13 @@ describe('Regionalizado Benfica Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.benfica,
-      validation_data_reg.regionalization.sellers.sellerName_benfica,
+      validation_data_reg.regionalization.sellers.sellerName_benfica
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
     cy.miniCartAddCart(
       validation_data_mini_cart.cart.mini_cart.total,
-      validation_data_mini_cart.cart.mini_cart.conclude,
+      validation_data_mini_cart.cart.mini_cart.conclude
     )
   })
   it('09 MC - Add 2 identical products', () => {
@@ -1004,7 +1004,7 @@ describe('Regionalizado Benfica Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.benfica,
-      validation_data_reg.regionalization.sellers.sellerName_benfica,
+      validation_data_reg.regionalization.sellers.sellerName_benfica
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 1)
@@ -1024,7 +1024,7 @@ describe('Regionalizado Benfica Não Logado', () => {
       Cypress.config().baseUrl,
       validation_data_login.interface.without_logged,
       validation_data_reg.regionalization.sellers.benfica,
-      validation_data_reg.regionalization.sellers.sellerName_benfica,
+      validation_data_reg.regionalization.sellers.sellerName_benfica
     )
     cy.miniCartLogo()
     cy.miniCart(validation_data_mini_cart.cart.mini_cart.title, 2)

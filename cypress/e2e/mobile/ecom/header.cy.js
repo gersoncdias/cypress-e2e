@@ -1,15 +1,20 @@
+const env = require('../../../cypress.env.json')
 const validation_data_login = require('../../../fixtures/login.json')
 const validation_data_header = require('../../../fixtures/header.json')
 const validation_data_reg = require('../../../fixtures/regionalization.json')
 const validation_data_my_account = require('../../../fixtures/my_account.json')
+const validation_data_stores = require('../../../fixtures/storeSettings.json')
 
 describe('Não Regionalizado Logado', () => {
   beforeEach(() => {
-    cy.loggedQecomMobile(
-      Cypress.config().baseUrl,
-      validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
     )
+    cy.visit(Cypress.config().baseUrl)
   })
   it('00 HE - Validate regionalization sallers', () => {
     cy.regionTopBar(

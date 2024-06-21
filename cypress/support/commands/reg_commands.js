@@ -39,7 +39,7 @@ Cypress.Commands.add('modalDropdowSeller', (seller) => {
   cy.get(REGION_PG.BTN_DROP_SELLER).click()
 })
 Cypress.Commands.add('confirmRegionalization', (sellerName) => {
-  cy.get(REGION_PG.TXT_REGION, { timeout: 10000 })
+  cy.get(REGION_PG.TXT_REGION, { timeout: 8000 })
     .should('exist')
     .should('be.visible')
     .should('contain.text', sellerName)
@@ -57,7 +57,6 @@ Cypress.Commands.add('toastRegionalization', (without_delivery) => {
 Cypress.Commands.add('setRegionalization', (seller, sellerName) => {
   cy.setCookie('seller', seller)
   cy.setCookie('sellerName', sellerName)
-  //cy.get(REGION_PG.TXT_REGION).should('exist').should('be.visible').should('contain.text', sellerName)
 })
 Cypress.Commands.add('changeRegion', (txt) => {
   cy.get(REGION_PG.BTN_CHANGE_REGION).should('exist').should('be.visible').should('contain.text', txt)
@@ -118,7 +117,6 @@ Cypress.Commands.add('hideFeedbackWidget', () => {
   cy.get('body').then(($body) => {
     const $feedbackContainer = $body.find('#_hj_feedback_container')
     if ($feedbackContainer.length) {
-      cy.log('Hiding feedback widget')
       $feedbackContainer.hide()
     }
   })

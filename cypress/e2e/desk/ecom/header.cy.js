@@ -1,17 +1,23 @@
+const env = require('../../../cypress.env.json')
 const validation_data_login = require('../../../fixtures/login.json')
 const validation_data_header = require('../../../fixtures/header.json')
 const validation_data_reg = require('../../../fixtures/regionalization.json')
 const validation_data_my_account = require('../../../fixtures/my_account.json')
+const validation_data_stores = require('../../../fixtures/storeSettings.json')
 
 describe('Não Regionalizado Logado', () => {
   beforeEach(() => {
-    cy.loggedQecom(
-      Cypress.config().baseUrl,
-      validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
     )
+    cy.visit(Cypress.config().baseUrl)
   })
   it('00 HE - Validate regionalization sallers', () => {
+    cy.modalUserLoggedi(validation_data_login.interface.greeting + env.user_qecom.user_name)
     cy.regionTopBar(
       validation_data_reg.regionalization.sellers.offer,
       validation_data_reg.regionalization.sellers.sellerName_mooca,
@@ -41,10 +47,10 @@ describe('Não Regionalizado Logado', () => {
     cy.miniCartLogo()
   })
   it('08 HE - Validate Professional Academy', () => {
-    cy.myAcademy(Cypress.config().url_academy)
+    cy.myAcademy(Cypress.config().url_academy, Cypress.config().baseUrl)
   })
   it('09 HE - Validate blog', () => {
-    cy.linkBlog(Cypress.config().url_blog)
+    cy.linkBlog(Cypress.config().url_blog, Cypress.config().baseUrl)
   })
   it('10 HE - Validate Max for Less', () => {
     cy.maxForLess(
@@ -73,13 +79,21 @@ describe('Não Regionalizado Logado', () => {
 })
 describe('Regionalizado Benfica Logado', () => {
   beforeEach(() => {
-    cy.loggedQecom(
-      Cypress.config().baseUrl,
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
+    )
+    cy.visit(Cypress.config().baseUrl)
+    cy.setRegionalization(
       validation_data_reg.regionalization.sellers.benfica,
       validation_data_reg.regionalization.sellers.sellerName_benfica
     )
   })
   it('00.1 HE - Validate slider', () => {
+    cy.modalUserLoggedi(validation_data_login.interface.greeting + env.user_qecom.user_name)
     cy.sliderTopBar()
   })
   it('02 HE - Validate Budget', () => {
@@ -102,10 +116,10 @@ describe('Regionalizado Benfica Logado', () => {
     cy.miniCartLogo()
   })
   it('08 HE - Validate Professional Academy', () => {
-    cy.myAcademy(Cypress.config().url_academy)
+    cy.myAcademy(Cypress.config().url_academy, Cypress.config().baseUrl)
   })
   it('09 HE - Validate blog', () => {
-    cy.linkBlog(Cypress.config().url_blog)
+    cy.linkBlog(Cypress.config().url_blog, Cypress.config().baseUrl)
   })
   it('10 HE - Validate Max for Less', () => {
     cy.maxForLess(
@@ -134,13 +148,21 @@ describe('Regionalizado Benfica Logado', () => {
 })
 describe('Regionalizado Mooca Logado', () => {
   beforeEach(() => {
-    cy.loggedQecom(
-      Cypress.config().baseUrl,
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
+    )
+    cy.visit(Cypress.config().baseUrl)
+    cy.setRegionalization(
       validation_data_reg.regionalization.sellers.mooca,
       validation_data_reg.regionalization.sellers.sellerName_mooca
     )
   })
   it('00.1 HE - Validate slider', () => {
+    cy.modalUserLoggedi(validation_data_login.interface.greeting + env.user_qecom.user_name)
     cy.sliderTopBar()
   })
   it('02 HE - Validate Budget', () => {
@@ -163,10 +185,10 @@ describe('Regionalizado Mooca Logado', () => {
     cy.miniCartLogo()
   })
   it('08 HE - Validate Professional Academy', () => {
-    cy.myAcademy(Cypress.config().url_academy)
+    cy.myAcademy(Cypress.config().url_academy, Cypress.config().baseUrl)
   })
   it('09 HE - Validate blog', () => {
-    cy.linkBlog(Cypress.config().url_blog)
+    cy.linkBlog(Cypress.config().url_blog, Cypress.config().baseUrl)
   })
   it('10 HE - Validate Max for Less', () => {
     cy.maxForLess(
@@ -195,14 +217,10 @@ describe('Regionalizado Mooca Logado', () => {
 })
 describe('Não Regionalizado Não Logado', () => {
   beforeEach(() => {
-    cy.noLoggedQecom(
-      Cypress.config().baseUrl,
-      validation_data_login.interface.without_logged,
-      validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca
-    )
+    cy.visit(Cypress.config().baseUrl)
   })
   it('00 HE - Validate regionalization sallers', () => {
+    cy.modalWithoutUserLoggedi(validation_data_login.interface.without_logged)
     cy.regionTopBar(
       validation_data_reg.regionalization.sellers.offer,
       validation_data_reg.regionalization.sellers.sellerName_mooca,
@@ -232,10 +250,10 @@ describe('Não Regionalizado Não Logado', () => {
     cy.miniCartLogo()
   })
   it('08 HE - Validate Professional Academy', () => {
-    cy.myAcademy(Cypress.config().url_academy)
+    cy.myAcademy(Cypress.config().url_academy, Cypress.config().baseUrl)
   })
   it('09 HE - Validate blog', () => {
-    cy.linkBlog(Cypress.config().url_blog)
+    cy.linkBlog(Cypress.config().url_blog, Cypress.config().baseUrl)
   })
   it('10 HE - Validate Max for Less', () => {
     cy.maxForLess(
@@ -264,14 +282,14 @@ describe('Não Regionalizado Não Logado', () => {
 })
 describe('Regionalizado Mooca Não Logado', () => {
   beforeEach(() => {
-    cy.noLoggedQecom(
-      Cypress.config().baseUrl,
-      validation_data_login.interface.without_logged,
+    cy.visit(Cypress.config().baseUrl)
+    cy.setRegionalization(
       validation_data_reg.regionalization.sellers.mooca,
       validation_data_reg.regionalization.sellers.sellerName_mooca
     )
   })
   it('00 HE - Validate regionalization sallers', () => {
+    cy.modalWithoutUserLoggedi(validation_data_login.interface.without_logged)
     cy.regionTopBar(
       validation_data_reg.regionalization.sellers.offer,
       validation_data_reg.regionalization.sellers.sellerName_mooca,
@@ -304,10 +322,10 @@ describe('Regionalizado Mooca Não Logado', () => {
     cy.miniCartLogo()
   })
   it('08 HE - Validate Professional Academy', () => {
-    cy.myAcademy(Cypress.config().url_academy)
+    cy.myAcademy(Cypress.config().url_academy, Cypress.config().baseUrl)
   })
   it('09 HE - Validate blog', () => {
-    cy.linkBlog(Cypress.config().url_blog)
+    cy.linkBlog(Cypress.config().url_blog, Cypress.config().baseUrl)
   })
   it('10 HE - Validate Max for Less', () => {
     cy.maxForLess(
@@ -336,14 +354,14 @@ describe('Regionalizado Mooca Não Logado', () => {
 })
 describe('Regionalizado Benfica Não Logado', () => {
   beforeEach(() => {
-    cy.noLoggedQecom(
-      Cypress.config().baseUrl,
-      validation_data_login.interface.without_logged,
+    cy.visit(Cypress.config().baseUrl)
+    cy.setRegionalization(
       validation_data_reg.regionalization.sellers.benfica,
       validation_data_reg.regionalization.sellers.sellerName_benfica
     )
   })
   it('00 HE - Validate regionalization sallers', () => {
+    cy.modalWithoutUserLoggedi(validation_data_login.interface.without_logged)
     cy.regionTopBar(
       validation_data_reg.regionalization.sellers.offer,
       validation_data_reg.regionalization.sellers.sellerName_benfica,
@@ -376,10 +394,10 @@ describe('Regionalizado Benfica Não Logado', () => {
     cy.miniCartLogo()
   })
   it('08 HE - Validate Professional Academy', () => {
-    cy.myAcademy(Cypress.config().url_academy)
+    cy.myAcademy(Cypress.config().url_academy, Cypress.config().baseUrl)
   })
   it('09 HE - Validate blog', () => {
-    cy.linkBlog(Cypress.config().url_blog)
+    cy.linkBlog(Cypress.config().url_blog, Cypress.config().baseUrl)
   })
   it('10 HE - Validate Max for Less', () => {
     cy.maxForLess(

@@ -3,7 +3,7 @@ class LOGIN_PAGE {
     this.BTN_ENTER_QTA = '#chooseprovider_signinbtn'
     this.BTN_EMAIL_QTA = '[data-testid="request-email"] > .vtex-button'
     this.MODAL_LOGIN_OPTIONS = '.lojaobramax-login-custom-0-x-loginOptionsContainer'
-    this.BTN_LOGIN = '.lojaobramax-login-custom-0-x-contentForm .lojaobramax-login-custom-0-x-formFooter'
+    this.BTN_LOGIN = '.lojaobramax-login-custom-0-x-label, .lojaobramax-login-custom-0-x-profile'
     this.BTN_ENTER_PERSON = '.lojaobramax-telemarketing-qta-0-x-button__login'
     this.BTN_MODAL_LOGIN = '.lojaobramax-login-custom-0-x-button .vtex-button'
     this.MODAL_LOGIN = '.lojaobramax-login-custom-0-x-content'

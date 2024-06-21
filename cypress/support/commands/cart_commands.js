@@ -4,20 +4,20 @@ const CHECKOUT_PAGE = require('../page_elements/checkout_page')
 const CHECKOUT_PG = new CHECKOUT_PAGE()
 
 Cypress.Commands.add('cardProductCart', (value) => {
-  cy.get(CART_PG.CARD_CART, { timeout: 20000 })
+  cy.get(CART_PG.CARD_CART, { timeout: 2000 })
     .should('exist')
     .should('be.visible')
     .find(CART_PG.MODAL_ITEM)
     .should('have.length', value)
 })
 Cypress.Commands.add('deliveryday', (txt) => {
-  cy.get(CART_PG.MODAL_DELIVERY, { timeout: 20000 })
+  cy.get(CART_PG.MODAL_DELIVERY, { timeout: 2000 })
     .should('exist')
     .should('be.visible')
     .should('contain.text', txt)
 })
 Cypress.Commands.add('validateReceiveText', (expectedText) => {
-  cy.get(CART_PG.TXT_RECEIVE, { timeout: 40000 })
+  cy.get(CART_PG.TXT_RECEIVE, { timeout: 4000 })
     .invoke('text')
     .then((text) => {
       expect(text.trim()).to.eq(expectedText)
@@ -32,7 +32,7 @@ Cypress.Commands.add('validateCEP', (expectedCEP) => {
 })
 Cypress.Commands.add('captureDeliveryTime', () => {
   return cy
-    .get(CART_PG.TXT_DELIVERY_TIME, { timeout: 20000 })
+    .get(CART_PG.TXT_DELIVERY_TIME, { timeout: 2000 })
     .invoke('text')
     .then((text) => {
       return text.trim()
@@ -109,10 +109,10 @@ Cypress.Commands.add('validateChooseMoreProductsLink', (url) => {
   cy.url().should('eq', url)
 })
 Cypress.Commands.add('valiateButtonWithdraw', () => {
-  cy.get(CART_PG.BTN_WITHDRAW, { timeout: 20000 }).click()
+  cy.get(CART_PG.BTN_WITHDRAW, { timeout: 2000 }).click()
 })
 Cypress.Commands.add('valiateRemoveAll', (txt) => {
-  cy.get(CART_PG.BTN_REMOVE_ALL, { timeout: 20000 }).should('contain.text', txt).click()
+  cy.get(CART_PG.BTN_REMOVE_ALL, { timeout: 2000 }).should('contain.text', txt).click()
 })
 Cypress.Commands.add('valiateModalRemoveAll', (txt1, txt2, txt3) => {
   cy.get(CART_PG.TXT_REMOVE_ITEM).should('contain.text', txt1)

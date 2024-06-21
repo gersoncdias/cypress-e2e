@@ -31,6 +31,7 @@ class HEADER_PAGE {
     this.MODAL_MENU_HANBURG =
       '.lojaobramax-store-components-0-x-menu__container .lojaobramax-store-components-0-x-menu__content'
     this.LINK_DEPARTAMENTS_MOBILE = '.vtex-store-drawer-0-x-drawerContent'
+    this.SKELETON_HEADER = 'rect[role="presentation"]'
   }
 }
 

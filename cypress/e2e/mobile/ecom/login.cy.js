@@ -2,6 +2,7 @@ const env = require('../../../cypress.env.json')
 const validation_data_login = require('../../../fixtures/login.json')
 const validation_data_my_account = require('../../../fixtures/my_account.json')
 const validation_data_reg = require('../../../fixtures/regionalization.json')
+const validation_data_stores = require('../../../fixtures/storeSettings.json')
 
 describe('Não Regionalizado Logado', () => {
   beforeEach(() => {
@@ -47,11 +48,14 @@ describe('Não Regionalizado Logado', () => {
     cy.withoutPassword()
   })
   it('07 LG - Validate Logout', () => {
-    cy.loggedQecomMobile(
-      Cypress.config().baseUrl,
-      validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
     )
+    cy.visit(Cypress.config().baseUrl)
     cy.logoutMobile(
       Cypress.config().baseUrl + validation_data_my_account.my_account.url.account,
       validation_data_login.interface.exit
@@ -106,11 +110,14 @@ describe('Regionalizado Benfica Logado', () => {
     cy.withoutPassword()
   })
   it('07 LG - Validate Logout', () => {
-    cy.loggedQecomMobile(
-      Cypress.config().baseUrl,
-      validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
     )
+    cy.visit(Cypress.config().baseUrl)
     cy.logoutMobile(
       Cypress.config().baseUrl + validation_data_my_account.my_account.url.account,
       validation_data_login.interface.exit
@@ -165,11 +172,14 @@ describe('Regionalizado Mooca Logado', () => {
     cy.withoutPassword()
   })
   it('07 LG - Validate Logout', () => {
-    cy.loggedQecomMobile(
-      Cypress.config().baseUrl,
-      validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
     )
+    cy.visit(Cypress.config().baseUrl)
     cy.logoutMobile(
       Cypress.config().baseUrl + validation_data_my_account.my_account.url.account,
       validation_data_login.interface.exit

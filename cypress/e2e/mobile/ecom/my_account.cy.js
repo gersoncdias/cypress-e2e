@@ -1,20 +1,24 @@
 const env = require('../../../cypress.env.json')
 const validation_data_reg = require('../../../fixtures/regionalization.json')
 const validation_data_my_account = require('../../../fixtures/my_account.json')
+const validation_data_stores = require('../../../fixtures/storeSettings.json')
 
 describe('Não Regionalizado Logado', () => {
   beforeEach(() => {
-    cy.loggedQecom(
-      Cypress.config().baseUrl + validation_data_my_account.my_account.url.account,
-      validation_data_reg.regionalization.sellers.mooca,
-      validation_data_reg.regionalization.sellers.sellerName_mooca
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
     )
+    cy.visit(Cypress.config().baseUrl + validation_data_my_account.my_account.url.account)
   })
   it('00 MA - Validate acess', () => {
     cy.acessMyAccount(Cypress.config().baseUrl + validation_data_my_account.my_account.url.account)
   })
   it('01 MA - Validate person data', () => {
-    cy.personDataMobile(validation_data_my_account.my_account.menu.personal_data)
+    cy.personData(validation_data_my_account.my_account.menu.personal_data)
     cy.modalPersonData()
     cy.modalName(
       validation_data_my_account.my_account.labels.name,
@@ -29,15 +33,13 @@ describe('Não Regionalizado Logado', () => {
     cy.btnEdit(validation_data_my_account.my_account.labels.btn_edit)
   })
   it('02 MA - Validate address', () => {
-    cy.adress(validation_data_my_account.my_account.menu.address)
-    cy.modalAdressTitle(validation_data_my_account.my_account.menu.address)
-    cy.modalAddAdress(validation_data_my_account.my_account.menu.add_adress)
+    cy.adresMobile(validation_data_my_account.my_account.menu.address)
   })
   it('03 MA - Validate my orders', () => {
     cy.myOrder(validation_data_my_account.my_account.menu.order)
     cy.modalOrder(validation_data_my_account.my_account.menu.without_order)
   })
-  it('04 MA - Validate my orders', () => {
+  it('04 MA - Validate my cards', () => {
     cy.myCards(validation_data_my_account.my_account.menu.cards)
     cy.modalOrder(validation_data_my_account.my_account.menu.without_cards)
   })
@@ -45,7 +47,7 @@ describe('Não Regionalizado Logado', () => {
     cy.myCredit(validation_data_my_account.my_account.menu.my_credits)
     cy.modalOrder(validation_data_my_account.my_account.menu.without_credit)
   })
-  it.only('06 MA - Validate authentication', () => {
+  it('06 MA - Validate authentication', () => {
     cy.authentication(validation_data_my_account.my_account.menu.authentication)
     cy.modalOrder(validation_data_my_account.my_account.menu.authentication)
   })
@@ -69,8 +71,15 @@ describe('Não Regionalizado Logado', () => {
 })
 describe('Regionalizado Benfica Logado', () => {
   beforeEach(() => {
-    cy.loggedQecom(
-      Cypress.config().baseUrl + validation_data_my_account.my_account.url.my_account,
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
+    )
+    cy.visit(Cypress.config().baseUrl + validation_data_my_account.my_account.url.my_account)
+    cy.setRegionalization(
       validation_data_reg.regionalization.sellers.benfica,
       validation_data_reg.regionalization.sellers.sellerName_benfica
     )
@@ -135,8 +144,15 @@ describe('Regionalizado Benfica Logado', () => {
 })
 describe('Regionalizado Mooca Logado', () => {
   beforeEach(() => {
-    cy.loggedQecom(
-      Cypress.config().baseUrl + validation_data_my_account.my_account.url.my_account,
+    cy.loginByApi(
+      env.user_qecom.email,
+      env.user_qecom.password,
+      validation_data_stores.api.account_name,
+      validation_data_stores.api.cookie_name,
+      validation_data_stores.api.account_name
+    )
+    cy.visit(Cypress.config().baseUrl + validation_data_my_account.my_account.url.my_account)
+    cy.setRegionalization(
       validation_data_reg.regionalization.sellers.mooca,
       validation_data_reg.regionalization.sellers.sellerName_mooca
     )
